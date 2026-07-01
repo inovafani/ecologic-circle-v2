@@ -85,18 +85,24 @@ const STATS = [
 const SCALE = [
   {
     big: '80%+',
-    title: 'Plastic Waste',
-    body: "Of the world's ocean plastic pollution originates in Asia. Thailand ranks 6th globally: 700,000 tonnes of polystyrene food containers, 1.72M tonnes of plastic cups & straws, and 50M disposable food boxes consumed daily.",
+    tag: 'Ocean plastic',
+    title: 'The plastic tide starts here',
+    body: "Over 80% of the world's ocean plastic originates in Asia. Thailand alone burns through 700,000 tonnes of polystyrene food containers, 1.72M tonnes of plastic cups & straws, and 50M disposable food boxes — every single day.",
+    answer: 'Molded-fibre packaging replaces it, then composts.',
   },
   {
     big: '17 trees',
-    title: 'Trees for Paper',
-    body: 'The paper industry consumes 17 trees per ton of paper and enormous amounts of chemicals. A single run of the Sunday New York Times requires 75,000 trees to be felled. Rice straw is a hidden alternative.',
+    tag: 'Deforestation',
+    title: 'Forests, pulped for paper',
+    body: 'Every ton of paper costs 17 trees and a flood of chemicals. One Sunday run of the New York Times fells 75,000 trees. Meanwhile, the rice straw that could make that same paper is set on fire in the field.',
+    answer: 'Tree-free rice-straw pulp keeps forests standing.',
   },
   {
     big: '64.7%',
-    title: 'Farmer Debt',
-    body: 'Of Thai agricultural households are burdened with debt, averaging 429,989 Baht ($12,833). Farmers take new loans to pay off old ones — a vicious cycle that contract farming with fair prices can break.',
+    tag: 'Rural poverty',
+    title: 'Farmers trapped in debt',
+    body: 'Nearly two in three Thai farming households carry debt — averaging 429,989 Baht ($12,833) — taking new loans to pay off old ones. Burning straw is free; selling it was never an option. Until now.',
+    answer: 'Paying for straw turns a cost into fair income.',
   },
 ];
 
@@ -238,159 +244,85 @@ export default function ImpactPage() {
           </Reveal>
         </section>
 
-        {/* ===== SCALE OF PROBLEM (deep green, on-brand) ===== */}
-        <section
-          style={{
-            position: 'relative',
-            background:
-              'linear-gradient(160deg,#2f5f48 0%,#264c3a 60%,#1f3e30 100%)',
-            padding: '104px 0 110px',
-            overflow: 'hidden',
-          }}
-        >
-          <div
-            aria-hidden
-            style={{
-              position: 'absolute',
-              top: -120,
-              right: -80,
-              width: 420,
-              height: 420,
-              borderRadius: '50%',
-              background:
-                'radial-gradient(circle,rgba(159,217,90,.18),transparent 70%)',
-              pointerEvents: 'none',
-            }}
-          />
-          <div
-            aria-hidden
-            style={{
-              position: 'absolute',
-              bottom: -140,
-              left: -100,
-              width: 460,
-              height: 460,
-              borderRadius: '50%',
-              background:
-                'radial-gradient(circle,rgba(232,185,74,.14),transparent 70%)',
-              pointerEvents: 'none',
-            }}
-          />
-          <div style={{ ...wrap, position: 'relative' }}>
-            <Reveal
-              style={{
-                textAlign: 'center',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                gap: 18,
-                marginBottom: 56,
-              }}
-            >
-              <h2
-                className="eco-h"
-                style={{ margin: 0, fontSize: 52, color: '#fff' }}
-              >
+        {/* ===== SCALE OF PROBLEM — editorial story ===== */}
+        <section style={{ background: '#F6FCEE', padding: '110px 0' }}>
+          <div style={wrap}>
+            <Reveal style={{ display: 'flex', flexDirection: 'column', gap: 16, marginBottom: 12, maxWidth: 680 }}>
+              <h2 className="eco-h" style={{ margin: 0, fontSize: 44, letterSpacing: '-1px' }}>
                 How bad is it? This bad.
               </h2>
-              <p
-                style={{
-                  margin: 0,
-                  fontSize: 18,
-                  lineHeight: 1.6,
-                  color: 'rgba(255,255,255,.72)',
-                  maxWidth: 640,
-                }}
-              >
-                These are the problems Ecologic Circle is solving with circular
-                solutions — not through regulation, but through markets.
+              <p style={{ margin: 0, fontSize: 19, lineHeight: 1.6, color: '#3f6b54' }}>
+                Three crises share a single root: crop residue treated as
+                worthless, so it&apos;s burned. Follow the numbers — then watch each
+                one flip into an opportunity.
               </p>
             </Reveal>
-            <Reveal
-              stagger
-              className="eco-3col"
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(3,1fr)',
-                gap: 24,
-              }}
-            >
-              {SCALE.map((c) => (
-                <div
+
+            {/* narrative rows */}
+            <div style={{ marginTop: 40 }}>
+              {SCALE.map((c, i) => (
+                <Reveal
                   key={c.title}
+                  className="eco-story-row"
                   style={{
-                    background: 'rgba(255,255,255,.06)',
-                    backdropFilter: 'blur(6px)',
-                    WebkitBackdropFilter: 'blur(6px)',
-                    border: '1px solid rgba(255,255,255,.14)',
-                    borderRadius: 20,
-                    padding: 34,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: 14,
-                    boxShadow: 'inset 0 1px 0 rgba(255,255,255,.12)',
+                    display: 'grid',
+                    gridTemplateColumns: '300px 1fr',
+                    gap: 48,
+                    alignItems: 'center',
+                    padding: '40px 0',
+                    borderTop: i === 0 ? '1px solid rgba(47,95,72,.14)' : 'none',
+                    borderBottom: '1px solid rgba(47,95,72,.14)',
                   }}
                 >
-                  <div
-                    style={{
-                      fontSize: 46,
-                      fontWeight: 600,
-                      letterSpacing: '-1.5px',
-                      color: '#e8b94a',
-                    }}
-                  >
-                    {c.big}
+                  {/* left: big number + tag */}
+                  <div>
+                    <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: 1.6, textTransform: 'uppercase', color: '#c98a2e', marginBottom: 10 }}>
+                      {c.tag}
+                    </div>
+                    <div className="eco-h" style={{ fontSize: 'clamp(52px, 7vw, 72px)', color: '#c98a2e', lineHeight: 0.95, letterSpacing: '-2px' }}>
+                      {c.big}
+                    </div>
                   </div>
-                  <h3
-                    style={{
-                      margin: 0,
-                      fontSize: 20,
-                      fontWeight: 600,
-                      color: '#fff',
-                    }}
-                  >
-                    {c.title}
-                  </h3>
-                  <p
-                    style={{
-                      margin: 0,
-                      fontSize: 14.5,
-                      lineHeight: 1.6,
-                      color: 'rgba(255,255,255,.74)',
-                    }}
-                  >
-                    {c.body}
-                  </p>
-                </div>
+
+                  {/* right: story + the flip */}
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                    <h3 style={{ margin: 0, fontSize: 24, fontWeight: 600, letterSpacing: '-.3px', color: '#2f5f48' }}>
+                      {c.title}
+                    </h3>
+                    <p style={{ margin: 0, fontSize: 16, lineHeight: 1.65, color: '#5b7a68', maxWidth: 620 }}>
+                      {c.body}
+                    </p>
+                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginTop: 4, color: '#2f5f48', fontSize: 15, fontWeight: 600 }}>
+                      <span aria-hidden style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 26, height: 26, borderRadius: '50%', background: '#eef7df', color: '#5aa84b', flex: 'none' }}>→</span>
+                      {c.answer}
+                    </div>
+                  </div>
+                </Reveal>
               ))}
-            </Reveal>
-            <div
+            </div>
+
+            {/* closing bridge */}
+            <Reveal
               style={{
+                marginTop: 56,
+                background: '#2f5f48',
+                borderRadius: 24,
+                padding: 'clamp(36px, 5vw, 56px)',
                 display: 'flex',
-                justifyContent: 'center',
-                marginTop: 52,
+                flexDirection: 'column',
+                gap: 14,
               }}
             >
-              <a
-                href="#contact"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 10,
-                  height: 54,
-                  padding: '0 30px',
-                  borderRadius: 999,
-                  background: '#9fd95a',
-                  color: '#234436',
-                  fontSize: 15,
-                  fontWeight: 700,
-                  textDecoration: 'none',
-                  boxShadow: '0 14px 30px -12px rgba(159,217,90,.5)',
-                }}
-              >
-                Read the full impact story <span aria-hidden>→</span>
-              </a>
-            </div>
+              <div className="eco-h" style={{ fontSize: 'clamp(24px, 3.4vw, 34px)', color: '#fff', maxWidth: 780 }}>
+                We don&apos;t ask the world to sacrifice — we make the better choice
+                the cheaper one.
+              </div>
+              <p style={{ margin: 0, fontSize: 16.5, lineHeight: 1.6, color: 'rgba(255,255,255,.8)', maxWidth: 680 }}>
+                Every tonne of rice straw we buy is a tonne that isn&apos;t burned —
+                cleaner air, standing forests, plastic replaced, and fair income
+                for the families who grow our food.
+              </p>
+            </Reveal>
           </div>
         </section>
 

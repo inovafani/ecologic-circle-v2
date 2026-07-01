@@ -91,11 +91,12 @@ Built for this moment.`}
                   lineHeight: 1.6,
                   color: 'rgba(255,255,255,.82)',
                   maxWidth: 620,
+                  whiteSpace: 'pre-line',
                 }}
               >
-                Led by the founder of one of the region&apos;s largest organic
+                {`Led by the founder of one of the region&apos;s largest organic
                 rice operations — a team spanning agriculture, food science,
-                pulp, packaging and finance, all based in Thailand.
+                pulp, packaging and finance, all based in Thailand.`}
               </p>
             </Reveal>
           </div>

@@ -165,6 +165,12 @@ a {
     font-size: clamp(26px, 6.6vw, 34px) !important;
     letter-spacing: -0.5px !important;
   }
+
+  /* Impact story rows stack on mobile */
+  .eco-story-row {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
 }
 
 @media (max-width: 480px) {
