@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="232" height="48" viewBox="0 0 232 48" fill="none" role="img" aria-label="Ecologic Circle">
+  <!-- circular-economy mark: two rotating arrows forming a circle around a leaf -->
+  <g transform="translate(24 24)">
+    <path d="M0 -17 A17 17 0 0 1 14.7 8.5" fill="none" stroke="#5aa84b" stroke-width="3.4" stroke-linecap="round"/>
+    <path d="M0 17 A17 17 0 0 1 -14.7 -8.5" fill="none" stroke="#2f5f48" stroke-width="3.4" stroke-linecap="round"/>
+    <path d="M14.7 8.5 l2.2 -6.4 -6.6 1.6 z" fill="#5aa84b"/>
+    <path d="M-14.7 -8.5 l-2.2 6.4 6.6 -1.6 z" fill="#2f5f48"/>
+    <!-- leaf -->
+    <path d="M0 8 C -7 4 -7 -6 0 -9 C 7 -6 7 4 0 8 Z" fill="#9fd95a"/>
+    <path d="M0 -9 L0 8" stroke="#2f5f48" stroke-width="1.4" stroke-linecap="round"/>
+  </g>
+  <!-- wordmark -->
+  <text x="54" y="30" font-family="Inter, system-ui, sans-serif" font-size="25" letter-spacing="-1" fill="#2f5f48">
+    <tspan font-weight="700">ecologic</tspan><tspan font-weight="300"> circle</tspan>
+  </text>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="460" viewBox="0 0 520 460" fill="none" role="img" aria-label="Compostable molded-fibre packaging">
+  <defs>
+    <linearGradient id="fibre" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ece0c6"/>
+      <stop offset="1" stop-color="#cdba94"/>
+    </linearGradient>
+    <linearGradient id="fibreTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4ebd6"/>
+      <stop offset="1" stop-color="#e2d2ad"/>
+    </linearGradient>
+    <radialGradient id="lid" cx="0.4" cy="0.35" r="0.8">
+      <stop offset="0" stop-color="#f6eeda"/>
+      <stop offset="1" stop-color="#dccaa0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- soft ground shadow -->
+  <ellipse cx="260" cy="404" rx="170" ry="26" fill="#2f5f48" opacity="0.16"/>
+
+  <!-- bottom bowl -->
+  <g>
+    <path d="M120 300 q140 70 280 0 l-26 70 q-114 46 -228 0 z" fill="url(#fibre)"/>
+    <ellipse cx="260" cy="300" rx="140" ry="40" fill="url(#fibreTop)" stroke="#c7b48b" stroke-width="1.5"/>
+    <ellipse cx="260" cy="300" rx="116" ry="31" fill="#d8c6a0"/>
+  </g>
+
+  <!-- middle bowl -->
+  <g>
+    <path d="M150 222 q110 56 220 0 l-22 60 q-88 38 -176 0 z" fill="url(#fibre)"/>
+    <ellipse cx="260" cy="222" rx="110" ry="32" fill="url(#fibreTop)" stroke="#c7b48b" stroke-width="1.5"/>
+    <ellipse cx="260" cy="222" rx="90" ry="24" fill="#d8c6a0"/>
+  </g>
+
+  <!-- top closed container with lid -->
+  <g>
+    <path d="M178 150 q82 42 164 0 l-16 48 q-66 30 -132 0 z" fill="url(#fibre)"/>
+    <ellipse cx="260" cy="150" rx="82" ry="26" fill="url(#lid)" stroke="#c7b48b" stroke-width="1.5"/>
+    <ellipse cx="260" cy="150" rx="58" ry="18" fill="none" stroke="#cab98f" stroke-width="1.4" opacity="0.7"/>
+    <ellipse cx="260" cy="150" rx="34" ry="10" fill="none" stroke="#cab98f" stroke-width="1.4" opacity="0.55"/>
+  </g>
+
+  <!-- leaf sprig accent -->
+  <g transform="translate(330 96) rotate(18)">
+    <path d="M0 40 C 2 18 16 4 40 0 C 36 26 22 40 0 40 Z" fill="#7bbf54"/>
+    <path d="M0 40 C 10 28 24 16 40 0" stroke="#3f7a59" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M-2 44 C -6 28 -4 14 4 2" stroke="#5aa84b" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- texture speckle to read as natural fibre -->
+  <g fill="#b39b6a" opacity="0.5">
+    <circle cx="220" cy="320" r="1.4"/>
+    <circle cx="290" cy="332" r="1.2"/>
+    <circle cx="250" cy="246" r="1.2"/>
+    <circle cx="300" cy="236" r="1.1"/>
+    <circle cx="232" cy="176" r="1.1"/>
+  </g>
+</svg>

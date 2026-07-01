@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* Hanken Grotesk — free, Neue-Haas-adjacent grotesque. Used as the visible
+   default and as the fallback when the licensed Neue Haas face isn't present. */
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap');
+
+/* ------------------------------------------------------------
+   Neue Haas Grotesk (licensed, optional).
+   Neue Haas Grotesk Display Pro is a paid Linotype face we can't embed.
+   If you own it, drop the web fonts in /public/fonts and uncomment below —
+   the whole site will switch to it automatically via the --eco-font stack.
+   ------------------------------------------------------------ */
+/*
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro';
+  src: url('/fonts/NeueHaasDisplay-Roman.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro';
+  src: url('/fonts/NeueHaasDisplay-Medium.woff2') format('woff2');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro';
+  src: url('/fonts/NeueHaasDisplay-Bold.woff2') format('woff2');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+*/
+
+/* ============================================================
+   Ecologic Circle — design tokens
+   Warm cream canvas, deep-green ink, leaf-green accent.
+   ============================================================ */
+:root {
+  --eco-canvas: #f6fcee;
+  --eco-canvas-soft: #eef7df;
+  --eco-ink: #2f5f48;        /* deep forest green — headlines/ink */
+  --eco-ink-deep: #264c3a;
+  --eco-accent: #5aa84b;     /* leaf green — eyebrows / roles */
+  --eco-accent-bright: #9fd95a;
+  --eco-body: #3f6b54;
+  --eco-muted: #5b7a68;
+  --eco-card: #ffffff;
+  --eco-hairline: rgba(47, 95, 72, 0.10);
+
+  /* Neue Haas Grotesk first (used if licensed font is installed/added),
+     then the free Hanken Grotesk near-match, then Inter, then system. */
+  --eco-font: 'Neue Haas Grotesk Display Pro', 'Neue Haas Grotesk',
+    'Hanken Grotesk', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --eco-maxw: 1160px;
+  --eco-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--eco-canvas);
+  color: var(--eco-ink);
+  font-family: var(--eco-font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* `clip` prevents horizontal scroll WITHOUT creating a scroll container,
+     so `position: sticky` (circular process diagram) keeps working. */
+  overflow-x: clip;
+}
+
+html {
+  scroll-padding-top: 96px; /* so in-page anchors clear the floating nav */
+}
+
+a {
+  color: inherit;
+}
+
+/* Display heading style — Inter 500 + tight tracking (brand contract) */
+.eco-h {
+  font-weight: 500;
+  letter-spacing: -1.5px;
+  line-height: 1.05;
+  color: var(--eco-ink);
+}
+
+.eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--eco-accent);
+}
+
+/* Elements revealed by GSAP. GSAP's `from()` tweens run inside useGSAP's
+   layout effect (before paint) and set the hidden state via immediateRender,
+   so there is no flash. If JS never runs, content simply stays visible. */
+.gsap-prep {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Product card — hover lift (used on Products page) */
+.prod-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid rgba(47, 95, 72, 0.1);
+  border-radius: 22px;
+  overflow: hidden;
+  transition: transform 0.35s var(--eco-ease), box-shadow 0.35s ease;
+}
+.prod-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 50px -28px rgba(47, 95, 72, 0.45);
+}
+
+/* ------------------------------------------------------------
+   Responsive grid helpers. Sections use inline grid styles for
+   fidelity to the source; these collapse them on smaller screens.
+   `!important` is required to override the inline grid-template.
+   ------------------------------------------------------------ */
+@media (max-width: 900px) {
+  .eco-2col,
+  .eco-3col {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+  /* featured (image + copy) product card stacks on mobile */
+  .eco-feature {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .eco-quote {
+    grid-template-columns: 1fr !important;
+    justify-items: center; /* Alex Tee photo centered on mobile */
+    text-align: center;
+    gap: 24px !important;
+  }
+  .eco-5col {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  /* SDG cards: single column + natural height (no empty stretched boxes) */
+  .eco-4col {
+    grid-template-columns: 1fr !important;
+    align-items: start !important;
+  }
+  .eco-section-pad {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  /* Section headings (h2) scale down on mobile so they never exceed the hero */
+  h2.eco-h {
+    font-size: clamp(26px, 6.6vw, 34px) !important;
+    letter-spacing: -0.5px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .eco-5col {
+    grid-template-columns: 1fr !important;
+  }
+}

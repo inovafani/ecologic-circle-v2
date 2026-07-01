@@ -1,0 +1,237 @@
+.section {
+  background: #e8eae1;
+  padding: 104px 0 120px;
+}
+.inner {
+  max-width: var(--eco-maxw);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.heading {
+  margin: 14px 0 0;
+  font-size: 54px;
+}
+.lead {
+  margin: 18px 0 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--eco-body);
+  max-width: 560px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 32px;
+  align-items: start;
+}
+
+/* steps — each tall enough to give the pinned diagram scroll room */
+.steps {
+  display: flex;
+  flex-direction: column;
+}
+.step {
+  min-height: 64vh;
+  display: flex;
+  align-items: center;
+  opacity: 0.4;
+}
+.stepCard {
+  border-left: 3px solid #e8a33d;
+  background: #fff;
+  border-radius: 0 18px 18px 0;
+  padding: 28px 30px;
+  display: flex;
+  gap: 18px;
+}
+.badge {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+.stepKicker {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.stepTitle {
+  margin: 0 0 6px;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--eco-ink);
+}
+.stepBody {
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: var(--eco-muted);
+}
+
+/* per-step image (mobile only) */
+.stepMedia {
+  display: none;
+}
+.stepCircle {
+  width: 220px;
+  max-width: 72vw;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #5aa84b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 14px 34px -18px rgba(47, 95, 72, 0.5);
+}
+.stepCircle img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.stepCircle span {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* diagram column — sticky while the steps scroll past (mint.bio-style) */
+.diagramCol {
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: calc(50vh - 230px);
+  align-self: start;
+  height: 460px;
+}
+.diagram {
+  position: relative;
+  width: 460px;
+  height: 460px;
+  max-width: 100%;
+}
+.spinRing,
+.coreSvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.spinRing {
+  pointer-events: none;
+  transform-origin: 50% 50%;
+}
+.coreSvg {
+  pointer-events: none;
+}
+
+.ringText {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  fill: #9bb3a4;
+  text-transform: uppercase;
+}
+.nodeLabel {
+  font-size: 13px;
+  font-weight: 600;
+  fill: var(--eco-ink);
+}
+.node {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* center crossfading image stack */
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 152px;
+  height: 152px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 10px 26px -14px rgba(47, 95, 72, 0.4), inset 0 0 0 5px #fff;
+  background: #fff;
+}
+.cLayer {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+.cLayer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.cPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.cPlaceholder span {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--eco-ink);
+}
+.cap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 26px 10px 12px;
+  text-align: center;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(180deg, transparent, rgba(20, 40, 30, 0.72));
+  z-index: 2;
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 72px 0 84px;
+  }
+  .inner {
+    padding: 0 28px;
+  }
+  .heading {
+    font-size: 36px;
+  }
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  /* mobile = mint.bio-style stacked flow: hide the sticky diagram,
+     show each step followed by its own image circle */
+  .diagramCol {
+    display: none;
+  }
+  .stepMedia {
+    display: flex;
+    justify-content: center;
+    margin-top: 22px;
+  }
+  .step {
+    min-height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    opacity: 1 !important;
+    padding: 26px 0 8px;
+  }
+}

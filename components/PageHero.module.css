@@ -1,0 +1,105 @@
+.hero {
+  position: relative;
+  padding-top: 34px;
+  overflow: hidden;
+}
+
+/* decorative soft orb behind the title */
+.orb {
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  width: 520px;
+  height: 520px;
+  margin-left: -260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(159, 217, 90, 0.34) 0%, rgba(159, 217, 90, 0) 68%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* logo — identical placement on every hero (fixed 1160 container) */
+.logoRow {
+  position: relative;
+  z-index: 2;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.logo {
+  height: 42px;
+  width: auto;
+  display: block;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 76px 40px 92px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.eyebrow {
+  display: inline-block;
+  padding: 7px 16px;
+  border-radius: 999px;
+  background: rgba(90, 168, 75, 0.12);
+  border: 1px solid rgba(90, 168, 75, 0.28);
+}
+
+.title {
+  margin: 0;
+  line-height: 1.05;
+}
+.word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+/* space between words (the inline-block mask clips the literal space) */
+.word:not(:last-child) {
+  margin-right: 0.26em;
+}
+.word > span {
+  display: inline-block;
+  will-change: transform;
+}
+
+.sub {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.55;
+  color: var(--eco-body);
+}
+
+@media (max-width: 760px) {
+  .title {
+    font-size: 38px !important;
+  }
+  .sub {
+    font-size: 17px;
+  }
+  .inner {
+    padding: 52px 28px 64px;
+  }
+  .logoRow {
+    padding: 0 28px;
+  }
+  .orb {
+    width: 360px;
+    height: 360px;
+    margin-left: -180px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .word > span {
+    transform: none;
+  }
+}

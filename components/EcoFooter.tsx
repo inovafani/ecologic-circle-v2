@@ -1,0 +1,91 @@
+'use client';
+
+import { useRef } from 'react';
+import Link from 'next/link';
+import { useGSAP } from '@gsap/react';
+import { gsap, ScrollTrigger, prefersReducedMotion } from '@/lib/gsap';
+import styles from './EcoFooter.module.css';
+
+export default function EcoFooter() {
+  const rootRef = useRef<HTMLElement>(null);
+
+  useGSAP(
+    () => {
+      if (prefersReducedMotion()) {
+        gsap.set('.gsap-prep', { opacity: 1, y: 0 });
+        return;
+      }
+      gsap.from(rootRef.current!.querySelectorAll('[data-foot-col]'), {
+        scrollTrigger: { trigger: rootRef.current, start: 'top 85%' },
+        y: 26,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        stagger: 0.12,
+      });
+      ScrollTrigger.refresh();
+    },
+    { scope: rootRef }
+  );
+
+  return (
+    <footer id="contact" ref={rootRef} className={styles.footer}>
+      <div className={styles.rainbow} aria-hidden />
+      <div className={styles.grid}>
+        <div className={`${styles.colBrand} gsap-prep`} data-foot-col>
+          <div className={styles.brandStack}>
+            <div className={styles.brandName}>
+              <span className={styles.brandBold}>ecologic</span>{' '}
+              <span className={styles.brandLight}>circle</span>
+            </div>
+            <div className={styles.tagline}>from ashes to impact</div>
+          </div>
+          <p className={styles.blurb}>
+            Turning rice straw that would otherwise burn into compostable
+            packaging, tree-free pulp and organic fertiliser — at scale.
+          </p>
+        </div>
+
+        <div className={`${styles.col} gsap-prep`} data-foot-col>
+          <div className={styles.colHead}>Contacts</div>
+          <div className={styles.addr}>
+            187 Moo 8 Sriwiang-Maeleab Road,
+            <br />
+            Muangchom, Wiangchai,
+            <br />
+            Chiangrai 57210, Thailand
+          </div>
+          <a href="tel:1234567890" className={styles.link}>
+            123-456-7890
+          </a>
+          <a href="mailto:info@ecologiccircle.com" className={styles.link}>
+            info@ecologiccircle.com
+          </a>
+        </div>
+
+        <div className={`${styles.col} gsap-prep`} data-foot-col>
+          <div className={styles.colHead}>Discover</div>
+          <Link href="/" className={styles.link}>
+            Home
+          </Link>
+          <Link href="/products" className={styles.link}>
+            Products
+          </Link>
+          <Link href="/impact" className={styles.link}>
+            Our Impact Story
+          </Link>
+          <Link href="/team" className={styles.link}>
+            Our Team
+          </Link>
+          <a href="mailto:info@ecologiccircle.com" className={styles.link}>
+            Get in touch
+          </a>
+        </div>
+      </div>
+
+      <div className={styles.legal}>
+        © 2026 Ecologic Circle. All Rights Reserved.
+      </div>
+    </footer>
+  );
+}

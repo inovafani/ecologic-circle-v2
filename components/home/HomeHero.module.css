@@ -1,0 +1,255 @@
+.hero {
+  position: relative;
+  min-height: 96vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* full-section straw background */
+.bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/straw-field.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+/* cream scrim — heavier on the left so copy stays crisp, straw shows on the right */
+.scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+      100deg,
+      rgba(246, 252, 238, 0.96) 0%,
+      rgba(246, 252, 238, 0.88) 34%,
+      rgba(246, 252, 238, 0.5) 66%,
+      rgba(246, 252, 238, 0.22) 100%
+    ),
+    linear-gradient(180deg, rgba(246, 252, 238, 0.6) 0%, rgba(246, 252, 238, 0) 22%);
+}
+
+.logoRow {
+  position: relative;
+  z-index: 3;
+  max-width: 1160px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 34px 40px 0;
+}
+.logo {
+  height: 42px;
+  width: auto;
+  display: block;
+}
+
+.grid {
+  position: relative;
+  z-index: 3;
+  flex: 1;
+  max-width: 1160px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding: 40px 0;
+}
+
+.title {
+  margin: 0;
+  font-size: 74px;
+}
+.line {
+  display: block;
+}
+.word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+/* space between words (the inline-block mask clips the literal space) */
+.word:not(:last-child) {
+  margin-right: 0.26em;
+}
+.word > span {
+  display: inline-block;
+  will-change: transform;
+}
+
+.sub {
+  margin: 0;
+  font-size: 21px;
+  line-height: 1.5;
+  color: var(--eco-body);
+  max-width: 480px;
+  font-weight: 400;
+}
+
+.actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+.btnPrimary,
+.btnGhost {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  height: 54px;
+  padding: 0 28px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s var(--eco-ease), background 0.2s ease, box-shadow 0.2s ease;
+}
+.btnPrimary {
+  background: var(--eco-ink);
+  color: #fff;
+  box-shadow: 0 12px 30px -10px rgba(47, 95, 72, 0.55);
+}
+.btnPrimary:hover {
+  background: var(--eco-ink-deep);
+  transform: translateY(-2px);
+}
+.btnPrimary span {
+  transition: transform 0.2s var(--eco-ease);
+}
+.btnPrimary:hover span {
+  transform: translateX(4px);
+}
+.btnGhost {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1.5px solid rgba(47, 95, 72, 0.3);
+  color: var(--eco-ink);
+}
+.btnGhost:hover {
+  background: #fff;
+  transform: translateY(-2px);
+}
+
+/* art / 3D packaging */
+.artWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 480px;
+  perspective: 1100px;
+}
+.glow {
+  position: absolute;
+  width: 460px;
+  height: 460px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(216, 237, 191, 0.85) 0%, rgba(216, 237, 191, 0) 68%);
+}
+.art {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  transform-style: preserve-3d;
+  will-change: transform;
+  z-index: 2;
+}
+.art img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  filter: drop-shadow(0 40px 55px rgba(47, 95, 72, 0.45));
+}
+.shadow {
+  position: absolute;
+  bottom: 38px;
+  width: 62%;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(31, 62, 48, 0.4), rgba(31, 62, 48, 0) 70%);
+  filter: blur(6px);
+  z-index: 1;
+}
+
+.scrollRow {
+  position: relative;
+  z-index: 3;
+  max-width: 1160px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 40px 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #5b7a68;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.scrollLine {
+  width: 34px;
+  height: 1px;
+  background: #a9c2b2;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 0 28px;
+  }
+  .title {
+    font-size: 34px;
+  }
+  /* keep each line intact: "Next level" / "circular packaging" */
+  .line {
+    white-space: nowrap;
+  }
+  .copy {
+    padding: 16px 0 24px;
+  }
+  .artWrap {
+    min-height: 300px;
+    order: -1;
+  }
+  .glow,
+  .art {
+    max-width: 320px;
+  }
+  .logoRow {
+    padding: 28px 28px 0;
+  }
+  .scrollRow {
+    padding: 0 28px 24px;
+  }
+  .scrim {
+    background: linear-gradient(180deg, rgba(246, 252, 238, 0.92) 0%, rgba(246, 252, 238, 0.78) 60%, rgba(246, 252, 238, 0.55) 100%);
+  }
+  /* equal-width buttons (match the longest) */
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btnPrimary,
+  .btnGhost {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .word > span {
+    transform: none;
+  }
+}
