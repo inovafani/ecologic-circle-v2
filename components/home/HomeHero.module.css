@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  min-height: 96vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -10,7 +10,7 @@
 .bg {
   position: absolute;
   inset: 0;
-  background-image: url('/assets/straw-field.jpg');
+  background-image: url('/assets/pic-ricestraw.jpg');
   background-size: cover;
   background-position: center;
   z-index: 0;
@@ -20,14 +20,19 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(
+  background:
+    linear-gradient(
       100deg,
       rgba(246, 252, 238, 0.96) 0%,
       rgba(246, 252, 238, 0.88) 34%,
       rgba(246, 252, 238, 0.5) 66%,
       rgba(246, 252, 238, 0.22) 100%
     ),
-    linear-gradient(180deg, rgba(246, 252, 238, 0.6) 0%, rgba(246, 252, 238, 0) 22%);
+    linear-gradient(
+      180deg,
+      rgba(246, 252, 238, 0.6) 0%,
+      rgba(246, 252, 238, 0) 22%
+    );
 }
 
 .logoRow {
@@ -112,7 +117,10 @@
   font-size: 16px;
   font-weight: 600;
   text-decoration: none;
-  transition: transform 0.2s var(--eco-ease), background 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s var(--eco-ease),
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 }
 .btnPrimary {
   background: var(--eco-ink);
@@ -153,7 +161,11 @@
   width: 460px;
   height: 460px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(216, 237, 191, 0.85) 0%, rgba(216, 237, 191, 0) 68%);
+  background: radial-gradient(
+    circle,
+    rgba(216, 237, 191, 0.85) 0%,
+    rgba(216, 237, 191, 0) 68%
+  );
 }
 .art {
   position: relative;
@@ -176,7 +188,11 @@
   width: 62%;
   height: 40px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(31, 62, 48, 0.4), rgba(31, 62, 48, 0) 70%);
+  background: radial-gradient(
+    circle,
+    rgba(31, 62, 48, 0.4),
+    rgba(31, 62, 48, 0) 70%
+  );
   filter: blur(6px);
   z-index: 1;
 }
@@ -234,7 +250,12 @@
     padding: 0 28px 24px;
   }
   .scrim {
-    background: linear-gradient(180deg, rgba(246, 252, 238, 0.92) 0%, rgba(246, 252, 238, 0.78) 60%, rgba(246, 252, 238, 0.55) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(246, 252, 238, 0.92) 0%,
+      rgba(246, 252, 238, 0.78) 60%,
+      rgba(246, 252, 238, 0.55) 100%
+    );
   }
   /* equal-width buttons (match the longest) */
   .actions {

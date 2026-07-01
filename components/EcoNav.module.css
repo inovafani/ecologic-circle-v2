@@ -22,7 +22,7 @@
   justify-content: space-between;
   gap: 24px;
   padding: 9px 9px 9px 22px;
-  background: rgba(246, 252, 238, 0.92);
+  background: rgba(246, 252, 238, 0.62);
   backdrop-filter: blur(20px) saturate(1.5);
   -webkit-backdrop-filter: blur(20px) saturate(1.5);
   border: 1px solid rgba(47, 95, 72, 0.14);
