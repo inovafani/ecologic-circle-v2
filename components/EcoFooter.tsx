@@ -34,11 +34,12 @@ export default function EcoFooter() {
       <div className={styles.grid}>
         <div className={`${styles.colBrand} gsap-prep`} data-foot-col>
           <div className={styles.brandStack}>
-            <div className={styles.brandName}>
-              <span className={styles.brandBold}>ecologic</span>{' '}
-              <span className={styles.brandLight}>circle</span>
-            </div>
-            <div className={styles.tagline}>from ashes to impact</div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/assets/logo-white.png"
+              alt="Ecologic Circle — from ashes to impact"
+              className={styles.brandLogo}
+            />
           </div>
           <p className={styles.blurb}>
             Turning rice straw that would otherwise burn into compostable

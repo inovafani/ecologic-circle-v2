@@ -42,6 +42,12 @@
   gap: 2px;
 }
 
+.brandLogo {
+  height: auto;
+  width: 40%;
+  display: block;
+  border-radius: 12px;
+}
 .brandName {
   font-size: 30px;
   line-height: 1;
@@ -93,7 +99,9 @@
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   width: fit-content;
-  transition: color 0.18s ease, transform 0.18s ease;
+  transition:
+    color 0.18s ease,
+    transform 0.18s ease;
 }
 .link:hover {
   color: #fff;
