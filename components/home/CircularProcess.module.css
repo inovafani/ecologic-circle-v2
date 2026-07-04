@@ -1,81 +1,79 @@
+/* split section: green left half, cream right half (mint.bio-style) */
 .section {
-  background: #e8eae1;
-  padding: 104px 0 120px;
+  background: linear-gradient(to right, #1f3e30 0 50%, #f6fcee 50% 100%);
 }
 .inner {
-  max-width: var(--eco-maxw);
-  margin: 0 auto;
-  padding: 0 40px;
-}
-.heading {
-  margin: 14px 0 0;
-  font-size: 54px;
-}
-.lead {
-  margin: 18px 0 0;
-  font-size: 18px;
-  line-height: 1.6;
-  color: var(--eco-body);
-  max-width: 560px;
-}
-
-.layout {
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  margin-top: 32px;
+  gap: 0;
   align-items: start;
 }
 
-/* steps — each tall enough to give the pinned diagram scroll room */
+/* ---------- LEFT (green) ---------- */
+.left {
+  color: #fff;
+  /* align content to the left, indented like the rest of the site */
+  padding: 96px 56px 110px max(40px, calc((100vw - var(--eco-maxw)) / 2 + 40px));
+}
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+.eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #9fd95a;
+}
+.heading {
+  margin: 0;
+  font-size: 44px;
+  color: #fff;
+}
+.lead {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 440px;
+}
+
 .steps {
   display: flex;
   flex-direction: column;
+  margin-top: 8px;
 }
 .step {
-  min-height: 64vh;
+  min-height: 58vh;
   display: flex;
-  align-items: center;
-  opacity: 0.4;
-}
-.stepCard {
-  border-left: 3px solid #e8a33d;
-  background: #fff;
-  border-radius: 0 18px 18px 0;
-  padding: 28px 30px;
-  display: flex;
-  gap: 18px;
-}
-.badge {
-  flex: none;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  color: #fff;
-  display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  font-weight: 700;
-  font-size: 16px;
+  gap: 12px;
+  opacity: 0.42;
 }
 .stepKicker {
   font-size: 12px;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.6px;
   text-transform: uppercase;
-  margin-bottom: 4px;
 }
 .stepTitle {
-  margin: 0 0 6px;
-  font-size: 22px;
-  font-weight: 600;
-  color: var(--eco-ink);
+  margin: 0;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  color: #fff;
 }
 .stepBody {
   margin: 0;
-  font-size: 15.5px;
-  line-height: 1.55;
-  color: var(--eco-muted);
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 440px;
 }
 
 /* per-step image (mobile only) */
@@ -92,7 +90,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 14px 34px -18px rgba(47, 95, 72, 0.5);
+  box-shadow: 0 14px 34px -18px rgba(0, 0, 0, 0.5);
 }
 .stepCircle img {
   width: 100%;
@@ -104,14 +102,16 @@
   font-weight: 600;
 }
 
-/* diagram column — sticky while the steps scroll past (mint.bio-style) */
+/* ---------- RIGHT (cream): sticky diagram ---------- */
 .diagramCol {
   display: flex;
+  align-items: center;
   justify-content: center;
   position: sticky;
   top: calc(50vh - 230px);
   align-self: start;
   height: 460px;
+  padding: 0 40px;
 }
 .diagram {
   position: relative;
@@ -132,23 +132,16 @@
 }
 .coreSvg {
   pointer-events: none;
+  overflow: visible; /* let node labels sit just outside the viewBox */
 }
 
-.ringText {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 5px;
-  fill: #9bb3a4;
-  text-transform: uppercase;
-}
 .nodeLabel {
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 600;
   fill: var(--eco-ink);
 }
 .node {
-  transform-box: fill-box;
-  transform-origin: center;
+  /* scale origin is set per-node via gsap svgOrigin (scales in place) */
 }
 
 /* center crossfading image stack */
@@ -189,36 +182,21 @@
   font-weight: 600;
   color: var(--eco-ink);
 }
-.cap {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 26px 10px 12px;
-  text-align: center;
-  font-size: 12.5px;
-  font-weight: 600;
-  color: #fff;
-  background: linear-gradient(180deg, transparent, rgba(20, 40, 30, 0.72));
-  z-index: 2;
-}
 
 @media (max-width: 900px) {
+  /* mobile: all-green stacked flow, hide the sticky diagram */
   .section {
-    padding: 72px 0 84px;
+    background: #1f3e30;
   }
   .inner {
-    padding: 0 28px;
+    grid-template-columns: 1fr;
+  }
+  .left {
+    padding: 64px 28px 40px;
   }
   .heading {
-    font-size: 36px;
+    font-size: 34px;
   }
-  .layout {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-  /* mobile = mint.bio-style stacked flow: hide the sticky diagram,
-     show each step followed by its own image circle */
   .diagramCol {
     display: none;
   }
@@ -229,9 +207,10 @@
   }
   .step {
     min-height: auto;
-    flex-direction: column;
-    align-items: stretch;
     opacity: 1 !important;
-    padding: 26px 0 8px;
+    padding: 24px 0 8px;
+  }
+  .stepTitle {
+    font-size: 26px;
   }
 }

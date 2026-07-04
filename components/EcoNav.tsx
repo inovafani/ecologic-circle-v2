@@ -6,12 +6,13 @@ import { useGSAP } from '@gsap/react';
 import { gsap } from '@/lib/gsap';
 import styles from './EcoNav.module.css';
 
-type Active = 'home' | 'products' | 'impact' | 'team';
+type Active = 'home' | 'products' | 'impact' | 'team' | 'partners';
 
 const LINKS: { label: string; href: string; key: Active }[] = [
-  { label: 'Products', href: '/products', key: 'products' },
+  { label: 'Our Products', href: '/products', key: 'products' },
   { label: 'Our Impact Story', href: '/impact', key: 'impact' },
   { label: 'Our Team', href: '/team', key: 'team' },
+  { label: 'Our Partners', href: '/partners', key: 'partners' },
 ];
 
 export default function EcoNav({ active = 'home' }: { active?: Active }) {

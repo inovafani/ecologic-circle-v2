@@ -70,13 +70,16 @@ export default function EcoFooter() {
             Home
           </Link>
           <Link href="/products" className={styles.link}>
-            Products
+            Our Products
           </Link>
           <Link href="/impact" className={styles.link}>
             Our Impact Story
           </Link>
           <Link href="/team" className={styles.link}>
             Our Team
+          </Link>
+          <Link href="/partners" className={styles.link}>
+            Our Partners
           </Link>
           <a href="mailto:info@ecologiccircle.com" className={styles.link}>
             Get in touch

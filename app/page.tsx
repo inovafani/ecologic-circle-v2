@@ -73,13 +73,16 @@ export default function HomePage() {
               <div
                 style={{ display: 'flex', flexDirection: 'column', gap: 48 }}
               >
-                <h2
-                  className="eco-h"
-                  style={{ margin: 0, fontSize: 40, letterSpacing: '-1px' }}
-                >
-                  A vast resource of fibre material across a major rice-growing
-                  region.
-                </h2>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                  <span className="eyebrow">Vast Resource</span>
+                  <h2
+                    className="eco-h"
+                    style={{ margin: 0, fontSize: 40, letterSpacing: '-1px' }}
+                  >
+                    A vast resource of fibre material across a major rice-growing
+                    region.
+                  </h2>
+                </div>
                 <div
                   style={{
                     display: 'grid',
@@ -168,6 +171,7 @@ export default function HomePage() {
             className="eco-2col"
           >
             <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+              <span className="eyebrow">Burning Problem</span>
               <h2
                 className="eco-h"
                 style={{ margin: 0, fontSize: 38, letterSpacing: '-1px' }}
@@ -220,6 +224,7 @@ export default function HomePage() {
               <div
                 style={{ display: 'flex', flexDirection: 'column', gap: 18 }}
               >
+                <span className="eyebrow">Value Creation Solution</span>
                 <h2 className="eco-h" style={{ margin: 0, fontSize: 52 }}>
                   We make burning economically irrational.
                 </h2>
