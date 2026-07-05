@@ -73,14 +73,16 @@ export default function HomePage() {
               <div
                 style={{ display: 'flex', flexDirection: 'column', gap: 48 }}
               >
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                <div
+                  style={{ display: 'flex', flexDirection: 'column', gap: 16 }}
+                >
                   <span className="eyebrow">Vast Resource</span>
                   <h2
                     className="eco-h"
                     style={{ margin: 0, fontSize: 40, letterSpacing: '-1px' }}
                   >
-                    A vast resource of fibre material across a major rice-growing
-                    region.
+                    A vast resource of fibre material across a major
+                    rice-growing region.
                   </h2>
                 </div>
                 <div
@@ -322,7 +324,7 @@ export default function HomePage() {
                 >
                   <div
                     style={{
-                      height: 170,
+                      height: 220,
                       background: c.bg,
                       display: 'flex',
                       alignItems: 'center',

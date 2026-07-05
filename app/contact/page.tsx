@@ -29,7 +29,7 @@ export default function ContactPage() {
           sub="Partnerships, orders, or just curious about turning rice straw into impact — we'd love to hear from you."
         />
 
-        <section style={{ background: '#F6FCEE', padding: '10px 0 110px' }}>
+        <section style={{ background: '#F6FCEE', padding: '64px 0 110px' }}>
           <Reveal
             stagger
             className="eco-2col"
