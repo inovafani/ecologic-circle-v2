@@ -265,7 +265,7 @@ export default function ProductsPage() {
         />
 
         {/* ===== PRODUCT GRID ===== */}
-        <section style={{ background: '#F6FCEE', padding: '20px 0 110px' }}>
+        <section style={{ background: '#F6FCEE', padding: '64px 0 110px' }}>
           <div style={wrap}>
             <Reveal
               stagger

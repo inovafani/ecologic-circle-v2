@@ -145,7 +145,7 @@ export default function HomeHero() {
           <div className={styles.art} ref={artRef}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/assets/compostable-packaging.png"
+              src="/assets/hero-box-transparant.png"
               alt="Compostable organic packaging"
             />
           </div>

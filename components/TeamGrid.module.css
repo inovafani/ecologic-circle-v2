@@ -1,6 +1,6 @@
 .section {
   background: var(--eco-canvas);
-  padding: 8px 0 96px;
+  padding: 64px 0 96px;
 }
 
 /* bordered 2-column grid, matching the reference layout */
@@ -8,8 +8,6 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 40px;
-}
-.grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   border-top: 1px solid var(--eco-hairline);

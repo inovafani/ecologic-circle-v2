@@ -118,7 +118,7 @@ export default function ImpactPage() {
         />
 
         {/* ===== SDG CARDS ===== */}
-        <section style={{ background: '#F6FCEE', padding: '10px 0 96px' }}>
+        <section style={{ background: '#F6FCEE', padding: '64px 0 96px' }}>
           <Reveal
             stagger
             className="eco-4col"

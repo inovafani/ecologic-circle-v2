@@ -33,7 +33,7 @@ export default function PartnersPage() {
         />
 
         {/* ===== PARTNER LOGOS ===== */}
-        <section style={{ background: '#F6FCEE', padding: '10px 0 100px' }}>
+        <section style={{ background: '#F6FCEE', padding: '64px 0 100px' }}>
           <Reveal
             stagger
             className="eco-3col"

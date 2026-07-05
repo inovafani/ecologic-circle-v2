@@ -1,21 +1,9 @@
 .hero {
   position: relative;
   padding-top: 34px;
-  overflow: hidden;
-}
-
-/* decorative soft orb behind the title */
-.orb {
-  position: absolute;
-  top: -120px;
-  left: 50%;
-  width: 520px;
-  height: 520px;
-  margin-left: -260px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(159, 217, 90, 0.34) 0%, rgba(159, 217, 90, 0) 68%);
-  pointer-events: none;
-  z-index: 0;
+  /* solid, premium band — flat colour, crisp separation, no glow */
+  background: #eef6dd;
+  border-bottom: 1px solid rgba(47, 95, 72, 0.1);
 }
 
 /* logo — identical placement on every hero (fixed 1160 container) */
@@ -90,11 +78,6 @@
   }
   .logoRow {
     padding: 0 28px;
-  }
-  .orb {
-    width: 360px;
-    height: 360px;
-    margin-left: -180px;
   }
 }
 
