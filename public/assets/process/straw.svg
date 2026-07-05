@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" role="img" aria-label="Straw collection">
+  <rect width="400" height="400" fill="#eaf3d7"/>
+  <!-- field -->
+  <path d="M0 300 Q200 276 400 300 V400 H0 Z" fill="#bcd68a"/>
+  <g stroke="#a6c56f" stroke-width="4" stroke-linecap="round">
+    <path d="M40 340 Q200 320 360 340"/>
+    <path d="M20 372 Q200 352 380 372"/>
+  </g>
+  <!-- back bale -->
+  <g transform="translate(96 214)">
+    <rect x="0" y="0" width="96" height="76" rx="14" fill="#d9b978"/>
+    <rect x="0" y="0" width="96" height="76" rx="14" fill="none" stroke="#c19f57" stroke-width="3"/>
+    <path d="M24 0V76 M48 0V76 M72 0V76" stroke="#c8a865" stroke-width="3"/>
+  </g>
+  <!-- front bale -->
+  <g transform="translate(196 232)">
+    <rect x="0" y="0" width="112" height="84" rx="16" fill="#e5c98c"/>
+    <rect x="0" y="0" width="112" height="84" rx="16" fill="none" stroke="#c9a75e" stroke-width="3"/>
+    <path d="M28 0V84 M56 0V84 M84 0V84" stroke="#d2b473" stroke-width="3"/>
+    <!-- straw tufts -->
+    <g stroke="#caa85f" stroke-width="2.4" stroke-linecap="round">
+      <path d="M8 0 l-4 -12 M20 0 l0 -14 M32 0 l4 -12"/>
+      <path d="M80 0 l-3 -12 M92 0 l1 -13 M104 0 l4 -11"/>
+    </g>
+  </g>
+</svg>

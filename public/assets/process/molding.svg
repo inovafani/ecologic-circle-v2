@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" role="img" aria-label="Molding">
+  <rect width="400" height="400" fill="#eef0e6"/>
+  <!-- soft shadow -->
+  <ellipse cx="200" cy="312" rx="120" ry="20" fill="#2f5f48" opacity="0.12"/>
+  <!-- molded clamshell tray -->
+  <g>
+    <!-- lid -->
+    <path d="M96 150 q104 -30 208 0 l-8 34 q-96 -26 -192 0 z" fill="#e4d3a9"/>
+    <path d="M96 150 q104 -30 208 0" fill="none" stroke="#cbb681" stroke-width="3"/>
+    <ellipse cx="200" cy="150" rx="104" ry="20" fill="#efe2c0"/>
+    <ellipse cx="200" cy="150" rx="70" ry="12" fill="none" stroke="#d3c091" stroke-width="2.5"/>
+    <!-- base -->
+    <path d="M96 196 q104 34 208 0 l-14 74 q-90 30 -180 0 z" fill="#dcc79a"/>
+    <ellipse cx="200" cy="196" rx="104" ry="22" fill="#e9dab4"/>
+    <ellipse cx="200" cy="196" rx="80" ry="15" fill="#d2bd8b"/>
+    <!-- fibre speckle -->
+    <g fill="#b79f6a" opacity="0.5">
+      <circle cx="170" cy="232" r="2"/><circle cx="214" cy="240" r="1.6"/><circle cx="240" cy="224" r="1.6"/><circle cx="186" cy="212" r="1.6"/>
+    </g>
+  </g>
+  <!-- leaf accent -->
+  <g transform="translate(258 120) rotate(18)">
+    <path d="M0 30 C2 14 14 3 32 0 C28 20 16 30 0 30 Z" fill="#7bbf54"/>
+    <path d="M0 30 C8 22 20 12 32 0" stroke="#3f7a59" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

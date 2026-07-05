@@ -71,11 +71,11 @@ const STEP_MEDIA: {
   bg?: string;
   label?: string;
 }[] = [
-  { bg: 'radial-gradient(circle at 40% 35%,#fbf3df,#e7d9b3)', label: 'Farm inputs' },
-  { bg: 'radial-gradient(circle at 40% 35%,#eef7df,#cfe0a6)', label: 'Skills' },
-  { img: '/assets/straw-field.jpg' },
-  { img: '/assets/products/organic-pulp.png', fit: 'contain', bg: '#eef0e6' },
-  { img: '/assets/products/compostable-packaging.png', fit: 'contain', bg: '#eef0e6' },
+  { img: '/assets/process/farm-inputs.svg' },
+  { img: '/assets/process/skills.svg' },
+  { img: '/assets/process/straw.svg' },
+  { img: '/assets/process/pulping.svg' },
+  { img: '/assets/process/molding.svg' },
 ];
 
 const STEPS = [
