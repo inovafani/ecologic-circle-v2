@@ -348,6 +348,7 @@ export default function ProductsPage() {
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
+                    className="eco-float"
                     src="/assets/products/instant-noodles-packaging.png"
                     alt="Organic noodle packaging"
                     style={{
@@ -357,6 +358,7 @@ export default function ProductsPage() {
                       height: 'auto',
                       objectFit: 'contain',
                       display: 'block',
+                      filter: 'drop-shadow(0 22px 26px rgba(0,0,0,0.4))',
                     }}
                   />
                 </div>

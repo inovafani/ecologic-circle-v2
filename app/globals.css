@@ -112,11 +112,32 @@ a {
 .prod-card {
   display: flex;
   flex-direction: column;
-  background: #fff;
-  border: 1px solid rgba(47, 95, 72, 0.1);
+  /* soft tint (not white) so product photos with white backgrounds stand out.
+     Alt options: #eaf2d8 (soft green) · #e8eee6 (sage grey) · #eef0f2 (cool grey-blue) */
+  background: #f4efe3;
+  border: 1px solid rgba(47, 95, 72, 0.12);
   border-radius: 22px;
   overflow: hidden;
   transition: transform 0.35s var(--eco-ease), box-shadow 0.35s ease;
+}
+
+/* gentle raised/floating motion (used by the featured noodle image) */
+@keyframes ecoFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+.eco-float {
+  animation: ecoFloat 3.6s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .eco-float {
+    animation: none;
+  }
 }
 .prod-card:hover {
   transform: translateY(-6px);
