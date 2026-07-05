@@ -42,37 +42,38 @@ const PRODUCTS: Product[] = [
   {
     title: 'Compostable organic tableware',
     body: 'Clamshells, bowls and plates molded from rice-straw fibre. Sturdy, microwave-safe and home-compostable — a clean swap for polystyrene.',
-    img: '/assets/compostable-packaging.png',
+    img: '/assets/products/compostable-packaging.png',
     fit: 'cover',
   },
   {
     title: 'Compostable organic fruit trays',
     body: 'Protective molded-fibre trays that cradle produce in transit and break down naturally after use.',
-    label: 'Fruit trays photo',
+    img: '/assets/products/fruit-trays.png',
+    fit: 'cover',
   },
   {
     title: 'Compostable organic egg trays',
     body: 'Organic-certified egg cartons carrying ~600,000 Hill Tribe eggs a month — the workhorse of our circular loop.',
-    label: 'Egg trays photo',
+    img: '/assets/products/egg-trays.png',
+    fit: 'cover',
   },
   {
     title: 'Tree-free paper pulp',
     body: 'Chemical-free pulp made entirely from rice straw — no felled trees, no harsh bleaching, just clean fibre for paper and board.',
-    img: '/assets/organic-pulp.png',
+    img: '/assets/products/organic-pulp.png',
     fit: 'cover',
   },
   {
     title: 'Organic fertiliser',
     body: "Nutrient-rich organic fertiliser that returns straw's goodness to the paddy — closing the soil-health loop.",
-    img: '/assets/organic-fertiliser.png',
+    img: '/assets/products/organic-fertiliser.png',
     fit: 'cover',
   },
   {
     title: 'Biochar',
     body: 'Carbon-rich biochar that locks atmospheric carbon into the soil for centuries while boosting water retention and yield.',
-    img: '/assets/biochar.svg',
-    fit: 'contain',
-    bg: '#1f2420',
+    img: '/assets/products/biocholar.png',
+    fit: 'cover',
   },
 ];
 
@@ -347,7 +348,7 @@ export default function ProductsPage() {
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="/assets/instant-noodles-packaging.png"
+                    src="/assets/products/instant-noodles-packaging.png"
                     alt="Organic noodle packaging"
                     style={{
                       maxWidth: '100%',
