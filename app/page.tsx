@@ -5,6 +5,7 @@ import HomeHero from '@/components/home/HomeHero';
 import CircularProcess from '@/components/home/CircularProcess';
 import Reveal from '@/components/Reveal';
 import CountUp from '@/components/CountUp';
+import ZoomImage from '@/components/ZoomImage';
 
 export const metadata: Metadata = {
   title: 'Ecologic Circle — Next level circular packaging',
@@ -322,28 +323,12 @@ export default function HomePage() {
                     flexDirection: 'column',
                   }}
                 >
-                  <div
-                    style={{
-                      height: 220,
-                      background: c.bg,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      overflow: 'hidden',
-                    }}
-                  >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={c.img}
-                      alt={c.title}
-                      style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: c.fit,
-                        display: 'block',
-                      }}
-                    />
-                  </div>
+                  <ZoomImage
+                    src={c.img}
+                    alt={c.title}
+                    fit={c.fit}
+                    style={{ height: 220, background: c.bg }}
+                  />
                   <div
                     style={{
                       padding: '24px 26px 28px',

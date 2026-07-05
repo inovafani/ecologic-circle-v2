@@ -121,6 +121,78 @@ a {
   transition: transform 0.35s var(--eco-ease), box-shadow 0.35s ease;
 }
 
+/* click-to-zoom lightbox (product images) */
+.eco-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6vh 6vw;
+  background: rgba(20, 35, 28, 0.82);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  cursor: zoom-out;
+  animation: ecoFadeIn 0.2s ease;
+}
+.eco-lightbox-img {
+  max-width: 92vw;
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.6);
+  cursor: default;
+  animation: ecoZoomIn 0.25s var(--eco-ease);
+}
+.eco-lightbox-close {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  font-size: 26px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.18s ease;
+}
+.eco-lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+@keyframes ecoFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes ecoZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* subtle zoom hint on hover */
+.eco-zoom-thumb img {
+  transition: transform 0.4s var(--eco-ease);
+}
+.eco-zoom-thumb:hover img {
+  transform: scale(1.04);
+}
+
 /* gentle raised/floating motion (used by the featured noodle image) */
 @keyframes ecoFloat {
   0%,

@@ -4,6 +4,7 @@ import EcoFooter from '@/components/EcoFooter';
 import Reveal from '@/components/Reveal';
 import ImageSlot from '@/components/ImageSlot';
 import PageHero from '@/components/PageHero';
+import ZoomImage from '@/components/ZoomImage';
 
 export const metadata: Metadata = {
   title: 'Our Products — Ecologic Circle',
@@ -86,13 +87,6 @@ const CERTS = [
 ];
 
 const MEDIA_H = 240;
-const mediaBox = {
-  height: MEDIA_H,
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  overflow: 'hidden' as const,
-};
 
 function CertBadge({
   kind,
@@ -287,19 +281,12 @@ export default function ProductsPage() {
                   style={{ height: '100%' }}
                 >
                   {p.img ? (
-                    <div style={{ ...mediaBox, background: p.bg ?? '#eef0e6' }}>
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={p.img}
-                        alt={p.title}
-                        style={{
-                          width: '100%',
-                          height: '100%',
-                          objectFit: p.fit ?? 'cover',
-                          display: 'block',
-                        }}
-                      />
-                    </div>
+                    <ZoomImage
+                      src={p.img}
+                      alt={p.title}
+                      fit={p.fit ?? 'cover'}
+                      style={{ height: MEDIA_H, background: p.bg ?? '#eef0e6' }}
+                    />
                   ) : (
                     <ImageSlot
                       label={p.label ?? 'Photo'}
@@ -337,31 +324,21 @@ export default function ProductsPage() {
                   overflow: 'hidden',
                 }}
               >
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    padding: 32,
-                    minHeight: 320,
+                <ZoomImage
+                  src="/assets/products/instant-noodles-packaging.png"
+                  alt="Organic noodle packaging"
+                  fit="contain"
+                  imgClassName="eco-float"
+                  style={{ minHeight: 320, padding: 32 }}
+                  imgStyle={{
+                    maxWidth: '100%',
+                    maxHeight: 260,
+                    width: 'auto',
+                    height: 'auto',
+                    objectFit: 'contain',
+                    filter: 'drop-shadow(0 22px 26px rgba(0,0,0,0.4))',
                   }}
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    className="eco-float"
-                    src="/assets/products/instant-noodles-packaging.png"
-                    alt="Organic noodle packaging"
-                    style={{
-                      maxWidth: '100%',
-                      maxHeight: 260,
-                      width: 'auto',
-                      height: 'auto',
-                      objectFit: 'contain',
-                      display: 'block',
-                      filter: 'drop-shadow(0 22px 26px rgba(0,0,0,0.4))',
-                    }}
-                  />
-                </div>
+                />
                 <div
                   style={{
                     padding: '46px 48px',
