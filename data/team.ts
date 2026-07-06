@@ -15,7 +15,7 @@ export const team: TeamMember[] = [
   {
     name: 'Bas Bijl',
     role: 'Co-Founder',
-    photo: '/assets/team/BasBijl.jpg',
+    photo: '/assets/team/Bas2.png',
     bio: '20 years in impact business-development projects in lower-income countries. Passionate about value creation through circular solutions.',
   },
   {
