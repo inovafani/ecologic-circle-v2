@@ -35,6 +35,8 @@ type Product = {
   body: string;
   img?: string;
   fit?: 'cover' | 'contain';
+  /** object-position for the cover crop, e.g. 'top' / 'center' / '50% 20%' */
+  pos?: string;
   bg?: string;
   label?: string;
 };
@@ -45,6 +47,7 @@ const PRODUCTS: Product[] = [
     body: 'Clamshells, bowls and plates molded from rice-straw fibre. Sturdy, microwave-safe and home-compostable — a clean swap for polystyrene.',
     img: '/assets/products/compostable-packaging.png',
     fit: 'cover',
+    pos: 'top',
   },
   {
     title: 'Compostable organic fruit trays',
@@ -86,7 +89,7 @@ const CERTS = [
   { kind: 'fda' as const, name: 'FDA Food Contact' },
 ];
 
-const MEDIA_H = 240;
+const MEDIA_H = 280;
 
 function CertBadge({
   kind,
@@ -286,6 +289,7 @@ export default function ProductsPage() {
                       alt={p.title}
                       fit={p.fit ?? 'cover'}
                       style={{ height: MEDIA_H, background: p.bg ?? '#eef0e6' }}
+                      imgStyle={{ objectPosition: p.pos ?? 'center' }}
                     />
                   ) : (
                     <ImageSlot
