@@ -121,6 +121,32 @@ a {
   transition: transform 0.35s var(--eco-ease), box-shadow 0.35s ease;
 }
 
+/* home value cards (icon + title + supporting line) */
+.value-card {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(47, 95, 72, 0.1);
+  border-radius: 20px;
+  padding: 34px 30px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  transition: transform 0.3s var(--eco-ease), box-shadow 0.3s ease;
+}
+.value-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 50px -30px rgba(47, 95, 72, 0.5);
+}
+.value-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
 /* click-to-zoom lightbox (product images) */
 .eco-lightbox {
   position: fixed;

@@ -5,7 +5,6 @@ import HomeHero from '@/components/home/HomeHero';
 import CircularProcess from '@/components/home/CircularProcess';
 import Reveal from '@/components/Reveal';
 import CountUp from '@/components/CountUp';
-import ZoomImage from '@/components/ZoomImage';
 
 export const metadata: Metadata = {
   title: 'Ecologic Circle — Next level circular packaging',
@@ -15,25 +14,40 @@ export const metadata: Metadata = {
 
 const VALUE_CARDS = [
   {
-    title: 'Compostable food packaging',
-    body: 'Molded-fibre tableware, trays and boxes that replace single-use plastic and break down naturally.',
-    img: '/assets/products/compostable-packaging.png',
-    fit: 'cover' as const,
-    bg: '#eef0e6',
+    title: 'Packaging materials to replace plastic',
+    body: 'Molded-fibre tableware, trays and boxes — a clean swap for single-use plastic.',
+    color: '#4C9F38',
+    icon: (
+      <>
+        <ellipse cx="12" cy="9.5" rx="8" ry="2.6" />
+        <path d="M4 9.5c0 4 3.6 7 8 7s8-3 8-7" />
+        <path d="M8 7.5a4 4 0 0 1 8 0" />
+      </>
+    ),
   },
   {
-    title: 'Tree-free paper pulp',
-    body: 'Chemical-free pulp made from rice straw — keeping forests standing and water clean.',
-    img: '/assets/products/organic-pulp.png',
-    fit: 'cover' as const,
-    bg: '#eef0e6',
+    title: 'Organic fertilizer to replace chemical fertilizer',
+    body: "Nutrient-rich fertiliser that returns straw's goodness to the soil — chemical-free.",
+    color: '#E5A11F',
+    icon: (
+      <>
+        <path d="M9 8.5h6v10.5a1.8 1.8 0 0 1-1.8 1.8h-2.4A1.8 1.8 0 0 1 9 19z" />
+        <path d="M10.5 8.5V5.5h3v3" />
+        <path d="M12 16.5c0-1.9 1.4-3 3.2-3 0 1.9-1.4 3-3.2 3z" />
+        <path d="M12 16.5c0-1.9-1.4-3-3.2-3 0 1.9 1.4 3 3.2 3z" />
+      </>
+    ),
   },
   {
-    title: 'Organic fertiliser & biochar',
-    body: 'Carbon-rich biochar and organic fertiliser that return nutrients to the soil and lock carbon away.',
-    img: '/assets/products/organic-fertiliser.png',
-    fit: 'cover' as const,
-    bg: '#eef0e6',
+    title: 'Cellulose pulp for paper industry',
+    body: 'Chemical-free, tree-free pulp for the paper and board industry.',
+    color: '#1597c4',
+    icon: (
+      <>
+        <path d="M4 12.5h16a8 8 0 0 1-16 0z" />
+        <path d="M6 12.5c1-1.7 3-1.7 4 0s3 1.7 4 0 3-1.7 4 0" />
+      </>
+    ),
   },
 ];
 
@@ -312,52 +326,57 @@ export default function HomePage() {
               className="eco-3col"
             >
               {VALUE_CARDS.map((c) => (
-                <div
-                  key={c.title}
-                  style={{
-                    background: '#fff',
-                    border: '1px solid rgba(47,95,72,.1)',
-                    borderRadius: 20,
-                    overflow: 'hidden',
-                    display: 'flex',
-                    flexDirection: 'column',
-                  }}
-                >
-                  <ZoomImage
-                    src={c.img}
-                    alt={c.title}
-                    fit={c.fit}
-                    style={{ height: 220, background: c.bg }}
+                <div key={c.title} className="value-card">
+                  <div
+                    className="value-accent"
+                    style={{ background: c.color }}
                   />
                   <div
                     style={{
-                      padding: '24px 26px 28px',
+                      width: 58,
+                      height: 58,
+                      borderRadius: 16,
+                      background: `${c.color}1f`,
                       display: 'flex',
-                      flexDirection: 'column',
-                      gap: 10,
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flex: 'none',
                     }}
                   >
-                    <h3
-                      style={{
-                        margin: 0,
-                        fontSize: 19,
-                        fontWeight: 600,
-                        color: '#2f5f48',
-                      }}
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="30"
+                      height="30"
+                      fill="none"
+                      stroke={c.color}
+                      strokeWidth="1.7"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     >
-                      {c.title}
-                    </h3>
-                    <p
-                      style={{
-                        margin: 0,
-                        fontSize: 14.5,
-                        lineHeight: 1.55,
-                        color: '#5b7a68',
-                      }}
-                    >
-                      {c.body}
-                    </p>
+                      {c.icon}
+                    </svg>
                   </div>
+                  <h3
+                    style={{
+                      margin: '22px 0 0',
+                      fontSize: 20,
+                      fontWeight: 600,
+                      lineHeight: 1.35,
+                      color: '#2f5f48',
+                    }}
+                  >
+                    {c.title}
+                  </h3>
+                  <p
+                    style={{
+                      margin: '10px 0 0',
+                      fontSize: 14.5,
+                      lineHeight: 1.6,
+                      color: '#5b7a68',
+                    }}
+                  >
+                    {c.body}
+                  </p>
                 </div>
               ))}
             </Reveal>
@@ -405,10 +424,10 @@ export default function HomePage() {
                   color: '#2f5f48',
                 }}
               >
-                We&apos;re not asking farmers to care about the planet. We pay
-                them more{' '}
-                <em style={{ fontStyle: 'italic', color: '#5aa84b' }}>not</em>{' '}
-                to burn — and the planet wins anyway.
+                Ecologic Circle is a beautiful and natural extension to rice
+                farming that Arvind and his team know deeply about. It is both
+                needful and urgent, with ripple effects that can change the
+                world.
               </p>
               <div style={{ fontSize: 15, color: '#5b7a68' }}>
                 <strong style={{ color: '#2f5f48' }}>Alex Tee</strong> —
@@ -423,8 +442,6 @@ export default function HomePage() {
           style={{
             background: '#F6FCEE',
             padding: '64px 0',
-            borderTop: '1px solid rgba(47,95,72,.08)',
-            borderBottom: '1px solid rgba(47,95,72,.08)',
           }}
         >
           <div style={wrap}>

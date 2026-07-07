@@ -45,7 +45,7 @@ const PRODUCTS: Product[] = [
   {
     title: 'Compostable organic tableware',
     body: 'Clamshells, bowls and plates molded from rice-straw fibre. Sturdy, microwave-safe and home-compostable — a clean swap for polystyrene.',
-    img: '/assets/products/compostable-packaging.png',
+    img: '/assets/products/burger-box.png',
     fit: 'cover',
     pos: 'top',
   },
@@ -82,175 +82,14 @@ const PRODUCTS: Product[] = [
 ];
 
 const CERTS = [
-  { kind: 'usda' as const, name: 'USDA Organic' },
-  { kind: 'eu' as const, name: 'EU Ecolabel' },
-  { kind: 'compost' as const, name: 'Compostable EN 13432:2000' },
-  { kind: 'bpi' as const, name: 'BPI Compostable' },
-  { kind: 'fda' as const, name: 'FDA Food Contact' },
+  { name: 'USDA Organic', img: '/assets/certifications/usda.png', inProcess: false },
+  { name: 'EU Ecolabel', img: '/assets/certifications/ecolabel.webp', inProcess: true },
+  { name: 'Compostable EN 13432:2000', img: '/assets/certifications/compostable.webp', inProcess: true },
+  { name: 'BPI Compostable', img: '/assets/certifications/bpi-compostable.jfif', inProcess: true },
+  { name: 'FDA Food Contact', img: '/assets/certifications/FDA-logo.jfif', inProcess: true },
 ];
 
 const MEDIA_H = 280;
-
-function CertBadge({
-  kind,
-}: {
-  kind: 'usda' | 'eu' | 'compost' | 'bpi' | 'fda';
-}) {
-  if (kind === 'usda')
-    return (
-      <div
-        style={{
-          width: 84,
-          height: 84,
-          borderRadius: '50%',
-          background: '#fff',
-          border: '4px solid #5a3b22',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          lineHeight: 1,
-        }}
-      >
-        <span
-          style={{
-            fontSize: 15,
-            fontWeight: 800,
-            color: '#3f6b34',
-            letterSpacing: 0.5,
-          }}
-        >
-          USDA
-        </span>
-        <span
-          style={{
-            marginTop: 3,
-            fontSize: 11,
-            fontWeight: 800,
-            color: '#fff',
-            background: '#3f6b34',
-            borderRadius: 3,
-            padding: '2px 6px',
-          }}
-        >
-          ORGANIC
-        </span>
-      </div>
-    );
-  if (kind === 'eu')
-    return (
-      <div
-        style={{
-          width: 84,
-          height: 84,
-          borderRadius: 16,
-          background: '#0a7d3f',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          color: '#fff',
-          gap: 2,
-        }}
-      >
-        <svg viewBox="0 0 24 24" width="30" height="30" fill="#ffd617">
-          <g>
-            {[...Array(8)].map((_, i) => {
-              const a = (i / 8) * Math.PI * 2;
-              return (
-                <circle
-                  key={i}
-                  cx={12 + Math.sin(a) * 7}
-                  cy={12 - Math.cos(a) * 7}
-                  r="1.3"
-                />
-              );
-            })}
-          </g>
-        </svg>
-        <span style={{ fontSize: 12, fontWeight: 800 }}>Ecolabel</span>
-      </div>
-    );
-  if (kind === 'compost')
-    return (
-      <div
-        style={{
-          width: 84,
-          height: 84,
-          clipPath: 'polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)',
-          background: '#5aa84b',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        <svg
-          viewBox="0 0 24 24"
-          width="40"
-          height="40"
-          fill="none"
-          stroke="#fff"
-          strokeWidth="1.7"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M12 22V12" />
-          <path d="M12 12c0-4 3-7 8-7 0 4-3 7-8 7z" />
-          <path d="M12 14c0-3.5-2.6-6-6.5-6 0 3.5 2.6 6 6.5 6z" />
-        </svg>
-      </div>
-    );
-  if (kind === 'bpi')
-    return (
-      <div
-        style={{
-          width: 84,
-          height: 84,
-          borderRadius: '50%',
-          background: '#2f6b3a',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          color: '#fff',
-          lineHeight: 1,
-        }}
-      >
-        <span style={{ fontSize: 22, fontWeight: 800, letterSpacing: 1 }}>
-          BPI
-        </span>
-        <span
-          style={{
-            marginTop: 3,
-            fontSize: 8,
-            fontWeight: 700,
-            letterSpacing: 1,
-          }}
-        >
-          COMPOSTABLE
-        </span>
-      </div>
-    );
-  return (
-    <div
-      style={{
-        width: 84,
-        height: 84,
-        borderRadius: 16,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        fontSize: 30,
-        fontWeight: 800,
-        fontStyle: 'italic',
-        color: '#1f7a3d',
-        border: '3px solid #1f7a3d',
-      }}
-    >
-      FDA
-    </div>
-  );
-}
 
 export default function ProductsPage() {
   return (
@@ -435,25 +274,65 @@ export default function ProductsPage() {
                     background: '#fff',
                     border: '1px solid rgba(47,95,72,.1)',
                     borderRadius: 18,
-                    padding: '30px 18px',
+                    padding: '28px 18px 24px',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    gap: 18,
+                    gap: 16,
                     textAlign: 'center',
                     height: '100%',
                   }}
                 >
-                  <CertBadge kind={c.kind} />
+                  {/* uniform logo box */}
+                  <div
+                    style={{
+                      height: 92,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={c.img}
+                      alt={c.name}
+                      style={{
+                        maxHeight: 92,
+                        maxWidth: 120,
+                        width: 'auto',
+                        height: 'auto',
+                        objectFit: 'contain',
+                        display: 'block',
+                      }}
+                    />
+                  </div>
                   <div
                     style={{
                       fontSize: 13.5,
                       fontWeight: 600,
                       color: '#2f5f48',
+                      flexGrow: 1,
                     }}
                   >
                     {c.name}
                   </div>
+                  {c.inProcess && (
+                    <span
+                      style={{
+                        fontSize: 11,
+                        fontWeight: 700,
+                        letterSpacing: 0.6,
+                        textTransform: 'uppercase',
+                        color: '#a06a1e',
+                        background: '#f7ecd3',
+                        border: '1px solid rgba(160,106,30,.25)',
+                        borderRadius: 999,
+                        padding: '4px 12px',
+                      }}
+                    >
+                      In process
+                    </span>
+                  )}
                 </div>
               ))}
             </Reveal>

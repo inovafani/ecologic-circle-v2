@@ -44,7 +44,7 @@
   padding: 34px 40px 0;
 }
 .logo {
-  height: 62px;
+  height: 72px;
   width: auto;
   display: block;
 }
@@ -179,6 +179,48 @@
 }
 .shadow {
   display: none;
+}
+
+/* scroll-down hint */
+.scrollHint {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: var(--eco-ink);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 3px rgba(246, 252, 238, 0.85);
+}
+.scrollChevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--eco-ink);
+  animation: scrollBob 1.8s var(--eco-ease) infinite;
+}
+@keyframes scrollBob {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scrollChevron {
+    animation: none;
+  }
 }
 
 .scrollRow {

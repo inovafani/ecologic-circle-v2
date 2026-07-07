@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import BackToTop from '@/components/BackToTop';
 
 export const metadata: Metadata = {
   title: 'Our Team — Ecologic Circle',
@@ -14,7 +15,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <BackToTop />
+      </body>
     </html>
   );
 }

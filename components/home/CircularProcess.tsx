@@ -20,12 +20,14 @@ const NODES = [
 
 // icon path fragments (drawn inside each node, 24x24)
 const ICONS = [
-  // 1 Farm inputs — sack
+  // 1 Farm inputs — fertilizer bag with plant
   (
     <>
-      <path d="M7 9h10l-1.2 11H8.2z" />
-      <path d="M9 9c0-2 1.3-3.2 3-3.2S15 7 15 9" />
-      <path d="M10 13.5h4" />
+      <path d="M6.5 9h11l-1 11H7.5z" />
+      <path d="M8.5 9c0-2 1.4-3 3.5-3s3.5 1 3.5 3" />
+      <path d="M12 18.5v-4.6" />
+      <path d="M12 13.9c0-2 1.4-3.2 3.4-3.2 0 2-1.4 3.2-3.4 3.2z" />
+      <path d="M12 13.9c0-2-1.4-3.2-3.4-3.2 0 2 1.4 3.2 3.4 3.2z" />
     </>
   ),
   // 2 Skills & compliance — seedling
@@ -36,14 +38,16 @@ const ICONS = [
       <path d="M12 13c0-3-2.5-5-6-5 0 3 2.5 5 6 5z" />
     </>
   ),
-  // 3 Straw collection — wheat
+  // 3 Straw collection — rice stalks
   (
     <>
-      <path d="M12 21V10" />
-      <path d="M12 10c0-2.5-2-4.5-4.5-4.5" />
-      <path d="M12 10c0-2.5 2-4.5 4.5-4.5" />
-      <path d="M12 15.5c0-2.2-1.8-4-4-4" />
-      <path d="M12 15.5c0-2.2 1.8-4 4-4" />
+      <path d="M12 21V9" />
+      <path d="M12 21C9 16.5 8 12.5 8 9.5" />
+      <path d="M12 21C15 16.5 16 12.5 16 9.5" />
+      <path d="M12 9c-1.3 0-2-1-2-2.4 1.3 0 2 1 2 2.4z" />
+      <path d="M12 9c1.3 0 2-1 2-2.4-1.3 0-2 1-2 2.4z" />
+      <path d="M8 9.5c-1.2.2-2-.7-2.3-2 1.2-.3 2 .6 2.3 2z" />
+      <path d="M16 9.5c1.2.2 2-.7 2.3-2-1.2-.3-2 .6-2.3 2z" />
     </>
   ),
   // 4 Pulping — factory
@@ -233,7 +237,14 @@ export default function CircularProcess() {
         <div className={styles.diagramCol}>
           <div className={styles.diagram}>
             <svg viewBox="0 0 400 400" className={styles.spinRing} aria-hidden>
-              <circle cx="200" cy="200" r="176" fill="none" stroke="rgba(47,95,72,0.16)" strokeWidth="2" strokeDasharray="1.5 13" strokeLinecap="round" />
+              <defs>
+                <path id="cp-ring" d="M200,200 m-186,0 a186,186 0 1,1 372,0 a186,186 0 1,1 -372,0" />
+              </defs>
+              <text className={styles.ringText}>
+                <textPath href="#cp-ring" startOffset="0" textLength="1168" lengthAdjust="spacing">
+                  START THE CIRCLE · STOP THE BURN · START THE CIRCLE · STOP THE BURN ·
+                </textPath>
+              </text>
             </svg>
 
             <div className={styles.center}>
