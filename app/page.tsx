@@ -7,7 +7,7 @@ import Reveal from '@/components/Reveal';
 import CountUp from '@/components/CountUp';
 
 export const metadata: Metadata = {
-  title: 'Ecologic Circle — Next level circular packaging',
+  title: 'Ecologic Circle — Next level sustainable packaging',
   description:
     'Turning rice straw that would otherwise burn into compostable packaging, tree-free pulp and organic fertiliser — at scale.',
 };
@@ -208,6 +208,9 @@ export default function HomePage() {
                 blankets the region in seasonal haze, releases CO₂ and black
                 carbon, and strips the soil of the very nutrients farmers depend
                 on. The straw is treated as worthless — so it goes up in flames.
+                It’s one of the world’s worst recurring climate disasters.
+                Efforts by governments to ban burning have largely failed
+                because the bans are virtually impossible to enforce.
               </p>
             </div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -216,6 +219,7 @@ export default function HomePage() {
               alt="Rice field burning, releasing haze"
               style={{
                 width: '100%',
+                height: '120%',
                 aspectRatio: '4 / 3',
                 objectFit: 'cover',
                 borderRadius: 24,
@@ -252,10 +256,16 @@ export default function HomePage() {
                     fontStyle: 'italic',
                     color: '#5aa84b',
                     fontWeight: 500,
+                    lineHeight: 1.5,
                   }}
                 >
-                  Tesla didn&apos;t invent new batteries — they made combustion
-                  engines irrational.
+                  &ldquo;Tesla didn&apos;t invent new batteries —
+                  <br />
+                  <span
+                    style={{ display: 'inline-block', paddingLeft: '2.6em' }}
+                  >
+                    they made combustion engines irrational.&rdquo;
+                  </span>
                 </p>
                 <p
                   style={{
@@ -281,7 +291,7 @@ export default function HomePage() {
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/assets/answer-problem.jpg"
+                  src="/assets/fertiliser.png"
                   alt="Turning crop residue into products the market demands"
                   style={{
                     width: '100%',

@@ -6,8 +6,7 @@ import { useGSAP } from '@gsap/react';
 import { gsap, prefersReducedMotion } from '@/lib/gsap';
 import styles from './HomeHero.module.css';
 
-const LINE1 = ['Next', 'level'];
-const LINE2 = ['circular', 'packaging'];
+const LINES = [['Next', 'level'], ['sustainable'], ['packaging']];
 
 export default function HomeHero() {
   const root = useRef<HTMLElement>(null);
@@ -109,22 +108,16 @@ export default function HomeHero() {
       <div className={styles.grid}>
         <div className={styles.copy}>
           <h1 className={`${styles.title} eco-h`}>
-            <span className={styles.line}>
-              {LINE1.map((w, i) => (
-                <span key={i} className={styles.word}>
-                  <span>{w}</span>
-                  {i < LINE1.length - 1 ? ' ' : ''}
-                </span>
-              ))}
-            </span>
-            <span className={styles.line}>
-              {LINE2.map((w, i) => (
-                <span key={i} className={styles.word}>
-                  <span>{w}</span>
-                  {i < LINE2.length - 1 ? ' ' : ''}
-                </span>
-              ))}
-            </span>
+            {LINES.map((line, li) => (
+              <span key={li} className={styles.line}>
+                {line.map((w, i) => (
+                  <span key={i} className={styles.word}>
+                    <span>{w}</span>
+                    {i < line.length - 1 ? ' ' : ''}
+                  </span>
+                ))}
+              </span>
+            ))}
           </h1>
           <p className={styles.sub}>
             Cleaning the air. Saving trees. Replacing plastics for a net
@@ -156,7 +149,16 @@ export default function HomeHero() {
       <div className={styles.scrollHint} aria-hidden>
         <span>Scroll to explore</span>
         <span className={styles.scrollChevron}>
-          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+          <svg
+            viewBox="0 0 24 24"
+            width="26"
+            height="26"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
             <path d="M6 9l6 6 6-6" />
           </svg>
         </span>

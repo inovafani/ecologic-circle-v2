@@ -94,8 +94,8 @@ Built for this moment.`}
                   whiteSpace: 'pre-line',
                 }}
               >
-                {`Led by the founder of one of the region&apos;s largest organic
-                rice operations — a team spanning agriculture, food science,
+                {`Led by the founder of one of the region's largest organic
+                jasmine rice operations — a team spanning agriculture, food science,
                 pulp, packaging and finance, all based in Thailand.`}
               </p>
             </Reveal>

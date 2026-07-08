@@ -70,7 +70,7 @@ const PRODUCTS: Product[] = [
   {
     title: 'Organic fertiliser',
     body: "Nutrient-rich organic fertiliser that returns straw's goodness to the paddy — closing the soil-health loop.",
-    img: '/assets/products/organic-fertiliser.png',
+    img: '/assets/products/fertiliser.png',
     fit: 'cover',
   },
   {
@@ -82,11 +82,31 @@ const PRODUCTS: Product[] = [
 ];
 
 const CERTS = [
-  { name: 'USDA Organic', img: '/assets/certifications/usda.png', inProcess: false },
-  { name: 'EU Ecolabel', img: '/assets/certifications/ecolabel.webp', inProcess: true },
-  { name: 'Compostable EN 13432:2000', img: '/assets/certifications/compostable.webp', inProcess: true },
-  { name: 'BPI Compostable', img: '/assets/certifications/bpi-compostable.jfif', inProcess: true },
-  { name: 'FDA Food Contact', img: '/assets/certifications/FDA-logo.jfif', inProcess: true },
+  {
+    name: 'USDA Organic',
+    img: '/assets/certifications/usda.png',
+    inProcess: false,
+  },
+  {
+    name: 'EU Ecolabel',
+    img: '/assets/certifications/ecolabel.webp',
+    inProcess: true,
+  },
+  {
+    name: 'Compostable EN 13432:2000',
+    img: '/assets/certifications/compostable.webp',
+    inProcess: true,
+  },
+  {
+    name: 'BPI Compostable',
+    img: '/assets/certifications/bpi-compostable.jfif',
+    inProcess: true,
+  },
+  {
+    name: 'FDA Food Contact',
+    img: '/assets/certifications/FDA-logo.jfif',
+    inProcess: true,
+  },
 ];
 
 const MEDIA_H = 280;

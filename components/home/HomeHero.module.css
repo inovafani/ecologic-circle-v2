@@ -81,6 +81,9 @@
   display: inline-block;
   overflow: hidden;
   vertical-align: top;
+  /* room for descenders (g, p, y) so the mask doesn't clip them */
+  padding-bottom: 0.16em;
+  margin-bottom: -0.16em;
 }
 /* space between words (the inline-block mask clips the literal space) */
 .word:not(:last-child) {

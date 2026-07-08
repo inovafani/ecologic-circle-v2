@@ -25,7 +25,7 @@ export default function EcoFooter() {
       });
       ScrollTrigger.refresh();
     },
-    { scope: rootRef }
+    { scope: rootRef },
   );
 
   return (
@@ -56,8 +56,8 @@ export default function EcoFooter() {
             <br />
             Chiangrai 57210, Thailand
           </div>
-          <a href="tel:1234567890" className={styles.link}>
-            123-456-7890
+          <a href="tel:66925464205" className={styles.link}>
+            +66925464205
           </a>
           <a href="mailto:info@ecologiccircle.com" className={styles.link}>
             info@ecologiccircle.com

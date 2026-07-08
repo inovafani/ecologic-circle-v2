@@ -21,49 +21,39 @@ const NODES = [
 // icon path fragments (drawn inside each node, 24x24)
 const ICONS = [
   // 1 Farm inputs — fertilizer bag with plant
-  (
-    <>
-      <path d="M6.5 9h11l-1 11H7.5z" />
-      <path d="M8.5 9c0-2 1.4-3 3.5-3s3.5 1 3.5 3" />
-      <path d="M12 18.5v-4.6" />
-      <path d="M12 13.9c0-2 1.4-3.2 3.4-3.2 0 2-1.4 3.2-3.4 3.2z" />
-      <path d="M12 13.9c0-2-1.4-3.2-3.4-3.2 0 2 1.4 3.2 3.4 3.2z" />
-    </>
-  ),
+  <>
+    <path d="M6.5 9h11l-1 11H7.5z" />
+    <path d="M8.5 9c0-2 1.4-3 3.5-3s3.5 1 3.5 3" />
+    <path d="M12 18.5v-4.6" />
+    <path d="M12 13.9c0-2 1.4-3.2 3.4-3.2 0 2-1.4 3.2-3.4 3.2z" />
+    <path d="M12 13.9c0-2-1.4-3.2-3.4-3.2 0 2 1.4 3.2 3.4 3.2z" />
+  </>,
   // 2 Skills & compliance — seedling
-  (
-    <>
-      <path d="M12 21v-8" />
-      <path d="M12 13c0-3 2.5-5 6-5 0 3-2.5 5-6 5z" />
-      <path d="M12 13c0-3-2.5-5-6-5 0 3 2.5 5 6 5z" />
-    </>
-  ),
+  <>
+    <path d="M12 21v-8" />
+    <path d="M12 13c0-3 2.5-5 6-5 0 3-2.5 5-6 5z" />
+    <path d="M12 13c0-3-2.5-5-6-5 0 3 2.5 5 6 5z" />
+  </>,
   // 3 Straw collection — rice stalks
-  (
-    <>
-      <path d="M12 21V9" />
-      <path d="M12 21C9 16.5 8 12.5 8 9.5" />
-      <path d="M12 21C15 16.5 16 12.5 16 9.5" />
-      <path d="M12 9c-1.3 0-2-1-2-2.4 1.3 0 2 1 2 2.4z" />
-      <path d="M12 9c1.3 0 2-1 2-2.4-1.3 0-2 1-2 2.4z" />
-      <path d="M8 9.5c-1.2.2-2-.7-2.3-2 1.2-.3 2 .6 2.3 2z" />
-      <path d="M16 9.5c1.2.2 2-.7 2.3-2-1.2-.3-2 .6-2.3 2z" />
-    </>
-  ),
+  <>
+    <path d="M12 21V9" />
+    <path d="M12 21C9 16.5 8 12.5 8 9.5" />
+    <path d="M12 21C15 16.5 16 12.5 16 9.5" />
+    <path d="M12 9c-1.3 0-2-1-2-2.4 1.3 0 2 1 2 2.4z" />
+    <path d="M12 9c1.3 0 2-1 2-2.4-1.3 0-2 1-2 2.4z" />
+    <path d="M8 9.5c-1.2.2-2-.7-2.3-2 1.2-.3 2 .6 2.3 2z" />
+    <path d="M16 9.5c1.2.2 2-.7 2.3-2-1.2-.3-2 .6-2.3 2z" />
+  </>,
   // 4 Pulping — factory
-  (
-    <>
-      <path d="M3 21h18" />
-      <path d="M4 21V11l5 3V11l5 3V8l5 3v7" />
-    </>
-  ),
+  <>
+    <path d="M3 21h18" />
+    <path d="M4 21V11l5 3V11l5 3V8l5 3v7" />
+  </>,
   // 5 Molding — tray
-  (
-    <>
-      <path d="M4 10h16l-1.6 8H5.6z" />
-      <path d="M4 10l2-3h12l2 3" />
-    </>
-  ),
+  <>
+    <path d="M4 10h16l-1.6 8H5.6z" />
+    <path d="M4 10l2-3h12l2 3" />
+  </>,
 ];
 
 const NODE_COLORS = ['#e8a33d', '#8ec63f', '#5aa84b', '#1597c4', '#2f5f48'];
@@ -102,14 +92,14 @@ const STEPS = [
     label: 'Straw',
     kicker: 'Step Three',
     title: 'Straw collection',
-    body: 'The rice straw that used to be burned is collected and paid for — a brand-new income stream on top of the grain.',
+    body: 'The rice straw that used to be burned is collected and paid for — a new income stream on top of the grain.',
   },
   {
     color: '#1597c4',
     label: 'Pulping',
     kicker: 'Step Four',
     title: 'Pulping',
-    body: 'Straw becomes chemical-free, tree-free pulp at our facility — no felled trees, no harsh bleaching, just clean fibre.',
+    body: 'Straw becomes tree-free pulp at our facility — no felled trees, no harsh bleaching, just clean fibre.',
   },
   {
     color: '#2f5f48',
@@ -134,7 +124,11 @@ export default function CircularProcess() {
 
       const setActive = (i: number) => {
         stepEls.forEach((s, si) => {
-          gsap.to(s, { opacity: si === i ? 1 : 0.42, duration: 0.4, ease: 'power2.out' });
+          gsap.to(s, {
+            opacity: si === i ? 1 : 0.42,
+            duration: 0.4,
+            ease: 'power2.out',
+          });
         });
         nodeEls.forEach((n, ni) => {
           const on = ni === i;
@@ -146,16 +140,30 @@ export default function CircularProcess() {
             svgOrigin: `${NODES[ni].cx} ${NODES[ni].cy}`,
           });
           const circle = n.querySelector('circle');
-          if (circle) circle.setAttribute('fill', on ? NODE_COLORS[ni] : '#fff');
-          n.querySelectorAll('.ico path').forEach((p) => p.setAttribute('stroke', on ? '#fff' : NODE_COLORS[ni]));
+          if (circle)
+            circle.setAttribute('fill', on ? NODE_COLORS[ni] : '#fff');
+          n.querySelectorAll('.ico path').forEach((p) =>
+            p.setAttribute('stroke', on ? '#fff' : NODE_COLORS[ni]),
+          );
         });
         imgEls.forEach((im, ii) => {
-          gsap.to(im, { opacity: ii === i ? 1 : 0, scale: ii === i ? 1 : 1.06, duration: 0.6, ease: 'power2.out' });
+          gsap.to(im, {
+            opacity: ii === i ? 1 : 0,
+            scale: ii === i ? 1 : 1.06,
+            duration: 0.6,
+            ease: 'power2.out',
+          });
         });
       };
 
       if (!prefersReducedMotion()) {
-        gsap.to(`.${styles.spinRing}`, { rotate: 360, duration: 55, ease: 'none', repeat: -1, transformOrigin: '50% 50%' });
+        gsap.to(`.${styles.spinRing}`, {
+          rotate: 360,
+          duration: 55,
+          ease: 'none',
+          repeat: -1,
+          transformOrigin: '50% 50%',
+        });
       }
 
       if (prefersReducedMotion()) {
@@ -189,7 +197,7 @@ export default function CircularProcess() {
       ScrollTrigger.refresh();
       return () => scrubST.kill();
     },
-    { scope: root }
+    { scope: root },
   );
 
   return (
@@ -199,10 +207,12 @@ export default function CircularProcess() {
         <div className={styles.left}>
           <div className={styles.intro}>
             <span className={styles.eyebrow}>The Circular Process</span>
-            <h2 className={`${styles.heading} eco-h`} style={{ color: '#fff' }}>Stop the burn, start the circle.</h2>
+            <h2 className={`${styles.heading} eco-h`} style={{ color: '#fff' }}>
+              Stop the burn, start the circle.
+            </h2>
             <p className={styles.lead}>
-              One ecosystem, five moving parts. Scroll to follow a single bale of
-              rice straw all the way around the loop — from ashes to impact.
+              One ecosystem, five moving parts. Scroll to follow a single bale
+              of rice straw all the way around the loop — from ashes to impact.
             </p>
           </div>
 
@@ -211,17 +221,30 @@ export default function CircularProcess() {
               const m = STEP_MEDIA[i];
               return (
                 <div key={i} className={styles.step}>
-                  <div className={styles.stepKicker} style={{ color: '#9fd95a' }}>
+                  <div
+                    className={styles.stepKicker}
+                    style={{ color: '#9fd95a' }}
+                  >
                     {s.kicker}
                   </div>
                   <h3 className={styles.stepTitle}>{s.title}</h3>
                   <p className={styles.stepBody}>{s.body}</p>
                   {/* mobile-only image for this step */}
                   <div className={styles.stepMedia}>
-                    <div className={styles.stepCircle} style={{ borderColor: s.color, background: m.bg ?? '#eef0e6' }}>
+                    <div
+                      className={styles.stepCircle}
+                      style={{
+                        borderColor: s.color,
+                        background: m.bg ?? '#eef0e6',
+                      }}
+                    >
                       {m.img ? (
                         // eslint-disable-next-line @next/next/no-img-element
-                        <img src={m.img} alt={s.title} style={{ objectFit: m.fit ?? 'cover' }} />
+                        <img
+                          src={m.img}
+                          alt={s.title}
+                          style={{ objectFit: m.fit ?? 'cover' }}
+                        />
                       ) : (
                         <span style={{ color: s.color }}>{m.label}</span>
                       )}
@@ -238,11 +261,20 @@ export default function CircularProcess() {
           <div className={styles.diagram}>
             <svg viewBox="0 0 400 400" className={styles.spinRing} aria-hidden>
               <defs>
-                <path id="cp-ring" d="M200,200 m-186,0 a186,186 0 1,1 372,0 a186,186 0 1,1 -372,0" />
+                <path
+                  id="cp-ring"
+                  d="M200,200 m-186,0 a186,186 0 1,1 372,0 a186,186 0 1,1 -372,0"
+                />
               </defs>
               <text className={styles.ringText}>
-                <textPath href="#cp-ring" startOffset="0" textLength="1168" lengthAdjust="spacing">
-                  START THE CIRCLE · STOP THE BURN · START THE CIRCLE · STOP THE BURN ·
+                <textPath
+                  href="#cp-ring"
+                  startOffset="0"
+                  textLength="1168"
+                  lengthAdjust="spacing"
+                >
+                  START THE CIRCLE · STOP THE BURN · START THE CIRCLE · STOP THE
+                  BURN ·
                 </textPath>
               </text>
             </svg>
@@ -252,9 +284,19 @@ export default function CircularProcess() {
                 <div key={i} className={styles.cLayer}>
                   {m.img ? (
                     // eslint-disable-next-line @next/next/no-img-element
-                    <img src={m.img} alt={STEPS[i].title} style={{ objectFit: m.fit ?? 'cover', background: m.bg ?? 'transparent' }} />
+                    <img
+                      src={m.img}
+                      alt={STEPS[i].title}
+                      style={{
+                        objectFit: m.fit ?? 'cover',
+                        background: m.bg ?? 'transparent',
+                      }}
+                    />
                   ) : (
-                    <div className={styles.cPlaceholder} style={{ background: m.bg }}>
+                    <div
+                      className={styles.cPlaceholder}
+                      style={{ background: m.bg }}
+                    >
                       <span>{m.label}</span>
                     </div>
                   )}
@@ -263,12 +305,40 @@ export default function CircularProcess() {
             </div>
 
             <svg viewBox="0 0 400 400" className={styles.coreSvg}>
-              <circle cx="200" cy="200" r="140" fill="none" stroke="#cfdcc8" strokeWidth="3" strokeDasharray="2 8" strokeLinecap="round" />
-              <circle ref={arcRef} cx="200" cy="200" r="140" fill="none" stroke="#5aa84b" strokeWidth="4" strokeLinecap="round" strokeDasharray={C} strokeDashoffset={C} transform="rotate(-90 200 200)" />
+              <circle
+                cx="200"
+                cy="200"
+                r="140"
+                fill="none"
+                stroke="#cfdcc8"
+                strokeWidth="3"
+                strokeDasharray="2 8"
+                strokeLinecap="round"
+              />
+              <circle
+                ref={arcRef}
+                cx="200"
+                cy="200"
+                r="140"
+                fill="none"
+                stroke="#5aa84b"
+                strokeWidth="4"
+                strokeLinecap="round"
+                strokeDasharray={C}
+                strokeDashoffset={C}
+                transform="rotate(-90 200 200)"
+              />
 
               {NODES.map((nd, i) => (
                 <g key={i} className={styles.node}>
-                  <circle cx={nd.cx} cy={nd.cy} r="30" fill="#fff" stroke={NODE_COLORS[i]} strokeWidth="2" />
+                  <circle
+                    cx={nd.cx}
+                    cy={nd.cy}
+                    r="30"
+                    fill="#fff"
+                    stroke={NODE_COLORS[i]}
+                    strokeWidth="2"
+                  />
                   <g
                     className="ico"
                     transform={`translate(${nd.cx - 12},${nd.cy - 12})`}
