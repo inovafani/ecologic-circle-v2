@@ -249,34 +249,44 @@
 }
 
 @media (max-width: 900px) {
+  /* full-height hero on mobile (keeps the 100vh from the base rule) */
+  .hero {
+    padding-bottom: 0;
+  }
   .grid {
     grid-template-columns: 1fr;
     gap: 8px;
     padding: 0 28px;
   }
+  /* centered title: "Next level" / "sustainable packaging" */
   .title {
-    font-size: 34px;
+    font-size: clamp(24px, 7.5vw, 32px);
+    text-align: center;
   }
-  /* keep each line intact: "Next level" / "circular packaging" */
   .line {
     white-space: nowrap;
   }
   .copy {
-    padding: 16px 0 24px;
+    padding: 8px 0 4px;
+    gap: 18px;
+    align-items: center;
+    text-align: center;
+  }
+  .sub {
+    text-align: center;
+    max-width: 460px;
+    font-size: 18px;
   }
   .artWrap {
-    min-height: 300px;
+    min-height: 230px;
     order: -1;
   }
   .glow,
   .art {
-    max-width: 320px;
+    max-width: 260px;
   }
   .logoRow {
-    padding: 28px 28px 0;
-  }
-  .scrollRow {
-    padding: 0 28px 24px;
+    padding: 24px 28px 0;
   }
   .scrim {
     background: linear-gradient(
@@ -286,8 +296,17 @@
       rgba(246, 252, 238, 0.55) 100%
     );
   }
-  /* equal-width buttons (match the longest) */
+  /* scroll hint sits in flow at the bottom, with clear space above the buttons */
+  .scrollHint {
+    position: static;
+    transform: none;
+    left: auto;
+    bottom: auto;
+    margin: 26px auto 20px;
+  }
+  /* full-width equal buttons, centered */
   .actions {
+    width: 100%;
     flex-direction: column;
     align-items: stretch;
   }

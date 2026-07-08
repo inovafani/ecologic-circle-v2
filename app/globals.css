@@ -243,12 +243,55 @@ a {
 }
 
 /* ------------------------------------------------------------
+   Burning-problem section. Desktop: title + body stacked on the
+   left, image on the right spanning both rows. Mobile reorders to
+   title -> image -> description via grid-template-areas.
+   ------------------------------------------------------------ */
+.eco-burning {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 64px;
+  row-gap: 22px;
+  align-items: center;
+  grid-template-areas:
+    'head img'
+    'body img';
+}
+.eco-burning-head {
+  grid-area: head;
+}
+.eco-burning-body {
+  grid-area: body;
+}
+.eco-burning-img {
+  grid-area: img;
+  height: 100%;
+  max-height: 460px;
+}
+
+/* ------------------------------------------------------------
    Responsive grid helpers. Sections use inline grid styles for
    fidelity to the source; these collapse them on smaller screens.
    `!important` is required to override the inline grid-template.
    ------------------------------------------------------------ */
 @media (max-width: 900px) {
-  .eco-2col,
+  .eco-burning {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'head'
+      'img'
+      'body';
+    column-gap: 0;
+    row-gap: 28px;
+  }
+  .eco-burning-img {
+    height: auto;
+    max-height: none;
+  }
+  .eco-2col {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
   .eco-3col {
     grid-template-columns: 1fr !important;
     gap: 28px !important;
@@ -289,6 +332,14 @@ a {
   .eco-story-row {
     grid-template-columns: 1fr !important;
     gap: 14px !important;
+  }
+
+  /* Tesla quote: no dangling word / indent on mobile */
+  .tesla-quote {
+    font-size: 17px !important;
+  }
+  .tesla-quote-2 {
+    padding-left: 0 !important;
   }
 }
 

@@ -6,7 +6,10 @@ import { useGSAP } from '@gsap/react';
 import { gsap, prefersReducedMotion } from '@/lib/gsap';
 import styles from './HomeHero.module.css';
 
-const LINES = [['Next', 'level'], ['sustainable'], ['packaging']];
+const LINES = [
+  ['Next', 'level'],
+  ['sustainable', 'packaging'],
+];
 
 export default function HomeHero() {
   const root = useRef<HTMLElement>(null);

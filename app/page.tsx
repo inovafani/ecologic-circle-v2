@@ -176,18 +176,11 @@ export default function HomePage() {
 
         {/* ===== BURNING PROBLEM ===== */}
         <section style={{ background: '#e8eae1', padding: '110px 0' }}>
-          <Reveal
-            stagger
-            style={{
-              ...wrap,
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: 64,
-              alignItems: 'center',
-            }}
-            className="eco-2col"
-          >
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+          <Reveal stagger style={wrap} className="eco-burning">
+            <div
+              className="eco-burning-head"
+              style={{ display: 'flex', flexDirection: 'column', gap: 20 }}
+            >
               <span className="eyebrow">Burning Problem</span>
               <h2
                 className="eco-h"
@@ -196,36 +189,37 @@ export default function HomePage() {
                 Every season, the cheapest way to clear a field is to set it on
                 fire.
               </h2>
-              <p
-                style={{
-                  margin: 0,
-                  fontSize: 18,
-                  lineHeight: 1.6,
-                  color: '#3f6b54',
-                }}
-              >
-                Millions of tonnes of rice straw are burned each year. The smoke
-                blankets the region in seasonal haze, releases CO₂ and black
-                carbon, and strips the soil of the very nutrients farmers depend
-                on. The straw is treated as worthless — so it goes up in flames.
-                It’s one of the world’s worst recurring climate disasters.
-                Efforts by governments to ban burning have largely failed
-                because the bans are virtually impossible to enforce.
-              </p>
             </div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
+              className="eco-burning-img"
               src="/assets/burning-problem-2.jpg"
               alt="Rice field burning, releasing haze"
               style={{
                 width: '100%',
-                height: '120%',
                 aspectRatio: '4 / 3',
                 objectFit: 'cover',
                 borderRadius: 24,
                 display: 'block',
               }}
             />
+            <p
+              className="eco-burning-body"
+              style={{
+                margin: 0,
+                fontSize: 18,
+                lineHeight: 1.6,
+                color: '#3f6b54',
+              }}
+            >
+              Millions of tonnes of rice straw are burned each year. The smoke
+              blankets the region in seasonal haze, releases CO₂ and black
+              carbon, and strips the soil of the very nutrients farmers depend
+              on. The straw is treated as worthless — so it goes up in flames.
+              It’s one of the world’s worst recurring climate disasters. Efforts
+              by governments to ban burning have largely failed because the bans
+              are virtually impossible to enforce.
+            </p>
           </Reveal>
         </section>
 
@@ -250,6 +244,7 @@ export default function HomePage() {
                   We make burning economically irrational.
                 </h2>
                 <p
+                  className="tesla-quote"
                   style={{
                     margin: 0,
                     fontSize: 21,
@@ -262,6 +257,7 @@ export default function HomePage() {
                   &ldquo;Tesla didn&apos;t invent new batteries —
                   <br />
                   <span
+                    className="tesla-quote-2"
                     style={{ display: 'inline-block', paddingLeft: '2.6em' }}
                   >
                     they made combustion engines irrational.&rdquo;
