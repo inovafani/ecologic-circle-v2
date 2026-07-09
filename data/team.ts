@@ -57,13 +57,13 @@ export const team: TeamMember[] = [
   },
   {
     name: 'Monthon Wongphad',
-    role: 'Site Manager',
+    role: 'SITE MANAGER',
     photo: '/assets/team/monthon.jpg',
     bio: 'Senior process engineer overseeing day-to-day production and quality across the facility.',
   },
   {
     name: 'Thanakit Sirpornsombut',
-    role: 'Manager, Head Field Operations',
+    role: 'MANAGER, HEAD FIELD OPERATONS',
     photo: '/assets/team/Thanakit.png',
     bio: 'Our supply chain is key to us. Thanakit is gold to us. He’s a rockstar guitarist at night and a super agronomist by day. He has extensive experience with farmer and community management for rice production, agronomic extension and personnel management.',
   },

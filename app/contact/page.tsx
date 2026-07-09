@@ -26,8 +26,8 @@ const INFO = [
   { label: 'Phone', value: '+66925464205', href: 'tel:66925464205' },
   {
     label: 'Email',
-    value: 'info@ecologiccircle.com',
-    href: 'mailto:info@ecologiccircle.com',
+    value: 'Info@ecologic-circle.com',
+    href: 'mailto:Info@ecologic-circle.com',
   },
 ];
 

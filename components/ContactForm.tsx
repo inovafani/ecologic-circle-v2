@@ -30,7 +30,7 @@ export default function ContactForm() {
     e.preventDefault();
     const subject = encodeURIComponent(`Enquiry from ${name || 'the website'}`);
     const body = encodeURIComponent(`${message}\n\n— ${name}\n${email}`);
-    window.location.href = `mailto:info@ecologiccircle.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:Info@ecologic-circle.com?subject=${subject}&body=${body}`;
   };
 
   return (

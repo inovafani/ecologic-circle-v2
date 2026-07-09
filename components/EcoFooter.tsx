@@ -59,8 +59,8 @@ export default function EcoFooter() {
           <a href="tel:66925464205" className={styles.link}>
             +66925464205
           </a>
-          <a href="mailto:info@ecologiccircle.com" className={styles.link}>
-            info@ecologiccircle.com
+          <a href="mailto:Info@ecologic-circle.com" className={styles.link}>
+            Info@ecologic-circle.com
           </a>
         </div>
 
@@ -81,7 +81,7 @@ export default function EcoFooter() {
           <Link href="/partners" className={styles.link}>
             Our Partners
           </Link>
-          <a href="mailto:info@ecologiccircle.com" className={styles.link}>
+          <a href="mailto:Info@ecologic-circle.com" className={styles.link}>
             Get in touch
           </a>
         </div>
