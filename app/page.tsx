@@ -26,6 +26,17 @@ const VALUE_CARDS = [
     ),
   },
   {
+    title: 'Cellulose pulp for paper industry',
+    body: 'Chemical-free, tree-free pulp for the paper and board industry.',
+    color: '#1597c4',
+    icon: (
+      <>
+        <path d="M4 12.5h16a8 8 0 0 1-16 0z" />
+        <path d="M6 12.5c1-1.7 3-1.7 4 0s3 1.7 4 0 3-1.7 4 0" />
+      </>
+    ),
+  },
+  {
     title: 'Organic fertilizer to replace chemical fertilizer',
     body: "Nutrient-rich fertiliser that returns straw's goodness to the soil — chemical-free.",
     color: '#E5A11F',
@@ -35,17 +46,6 @@ const VALUE_CARDS = [
         <path d="M10.5 8.5V5.5h3v3" />
         <path d="M12 16.5c0-1.9 1.4-3 3.2-3 0 1.9-1.4 3-3.2 3z" />
         <path d="M12 16.5c0-1.9-1.4-3-3.2-3 0 1.9 1.4 3 3.2 3z" />
-      </>
-    ),
-  },
-  {
-    title: 'Cellulose pulp for paper industry',
-    body: 'Chemical-free, tree-free pulp for the paper and board industry.',
-    color: '#1597c4',
-    icon: (
-      <>
-        <path d="M4 12.5h16a8 8 0 0 1-16 0z" />
-        <path d="M6 12.5c1-1.7 3-1.7 4 0s3 1.7 4 0 3-1.7 4 0" />
       </>
     ),
   },
@@ -230,9 +230,9 @@ export default function HomePage() {
               stagger
               style={{
                 display: 'grid',
-                gridTemplateColumns: '1.25fr .75fr',
-                gap: 48,
-                alignItems: 'start',
+                gridTemplateColumns: '1fr 1fr',
+                gap: 64,
+                alignItems: 'center',
               }}
               className="eco-2col"
             >
@@ -240,14 +240,17 @@ export default function HomePage() {
                 style={{ display: 'flex', flexDirection: 'column', gap: 18 }}
               >
                 <span className="eyebrow">Value Creation Solution</span>
-                <h2 className="eco-h" style={{ margin: 0, fontSize: 52 }}>
+                <h2
+                  className="eco-h"
+                  style={{ margin: 0, fontSize: 40, letterSpacing: '-1px' }}
+                >
                   We make burning economically irrational.
                 </h2>
                 <p
                   className="tesla-quote"
                   style={{
-                    margin: 0,
-                    fontSize: 21,
+                    margin: '2px 0',
+                    fontSize: 19,
                     fontStyle: 'italic',
                     color: '#5aa84b',
                     fontWeight: 500,
@@ -258,7 +261,7 @@ export default function HomePage() {
                   <br />
                   <span
                     className="tesla-quote-2"
-                    style={{ display: 'inline-block', paddingLeft: '2.6em' }}
+                    style={{ display: 'inline-block', paddingLeft: '2.2em' }}
                   >
                     they made combustion engines irrational.&rdquo;
                   </span>
@@ -266,10 +269,9 @@ export default function HomePage() {
                 <p
                   style={{
                     margin: 0,
-                    fontSize: 18,
+                    fontSize: 17,
                     lineHeight: 1.6,
                     color: '#3f6b54',
-                    maxWidth: 560,
                   }}
                 >
                   We create a dis-incentive to burn by converting crop residues
@@ -277,48 +279,18 @@ export default function HomePage() {
                   decarbonisation and the replacement of plastic at scale.
                 </p>
               </div>
-              <div
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/assets/answer-problem.jpg"
+                alt="Turning crop residue into products the market demands"
                 style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'flex-start',
-                  gap: 24,
+                  width: '100%',
+                  aspectRatio: '4 / 3',
+                  objectFit: 'cover',
+                  borderRadius: 24,
+                  display: 'block',
                 }}
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/assets/fertiliser.png"
-                  alt="Turning crop residue into products the market demands"
-                  style={{
-                    width: '100%',
-                    aspectRatio: '4 / 3',
-                    objectFit: 'cover',
-                    borderRadius: 24,
-                    display: 'block',
-                  }}
-                />
-                <a
-                  href="/products"
-                  style={{
-                    width: '100%',
-                    display: 'inline-flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    gap: 9,
-                    height: 50,
-                    padding: '0 26px',
-                    borderRadius: 999,
-                    background: '#fff',
-                    border: '1.5px solid rgba(47,95,72,.22)',
-                    color: '#2f5f48',
-                    fontSize: 15,
-                    fontWeight: 600,
-                    textDecoration: 'none',
-                  }}
-                >
-                  Learn about our products <span aria-hidden>→</span>
-                </a>
-              </div>
+              />
             </Reveal>
 
             <Reveal
@@ -339,9 +311,9 @@ export default function HomePage() {
                   />
                   <div
                     style={{
-                      width: 58,
-                      height: 58,
-                      borderRadius: 16,
+                      width: 66,
+                      height: 66,
+                      borderRadius: 18,
                       background: `${c.color}1f`,
                       display: 'flex',
                       alignItems: 'center',
@@ -351,8 +323,8 @@ export default function HomePage() {
                   >
                     <svg
                       viewBox="0 0 24 24"
-                      width="30"
-                      height="30"
+                      width="38"
+                      height="38"
                       fill="none"
                       stroke={c.color}
                       strokeWidth="1.7"
@@ -385,6 +357,34 @@ export default function HomePage() {
                   </p>
                 </div>
               ))}
+            </Reveal>
+
+            <Reveal
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                marginTop: 82,
+              }}
+            >
+              <a
+                href="/products"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 9,
+                  height: 52,
+                  padding: '0 34px',
+                  borderRadius: 999,
+                  background: '#fff',
+                  border: '1.5px solid rgba(47,95,72,.22)',
+                  color: '#2f5f48',
+                  fontSize: 15,
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                }}
+              >
+                Learn about our products <span aria-hidden>→</span>
+              </a>
             </Reveal>
           </div>
         </section>
@@ -437,7 +437,7 @@ export default function HomePage() {
               </p>
               <div style={{ fontSize: 15, color: '#5b7a68' }}>
                 <strong style={{ color: '#2f5f48' }}>Alex Tee</strong> —
-                Founder, Ecologic Circle
+                Managing Director, Beneficial Returns
               </div>
             </div>
           </Reveal>

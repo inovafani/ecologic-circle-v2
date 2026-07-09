@@ -81,7 +81,7 @@ export default function TeamPage() {
                   whiteSpace: 'pre-line',
                 }}
               >
-                {`Four decades of agriculture.
+                {`Three decades of agriculture.
 Built for this moment.`}
               </h2>
               <p

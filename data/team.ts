@@ -45,7 +45,7 @@ export const team: TeamMember[] = [
   },
   {
     name: 'Phakawan Jandaeng',
-    role: 'DIRECTOR, R&D AND QUALITY COMPLIANCE',
+    role: 'MANAGER, R&D AND QUALITY COMPLIANCE',
     photo: '/assets/team/phakawan.jpg',
     bio: 'Leads innovation R&D for new product development. 14 years of experience in agri-food research and development.',
   },

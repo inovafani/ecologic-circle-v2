@@ -56,7 +56,8 @@ const ICONS = [
   </>,
 ];
 
-const NODE_COLORS = ['#e8a33d', '#8ec63f', '#5aa84b', '#1597c4', '#2f5f48'];
+// step fills: 1 light green · 2 dark green · 3 gold · 4 gold · 5 brown
+const NODE_COLORS = ['#8ec63f', '#2f5f48', '#e0a125', '#e0a125', '#8a5a2b'];
 
 // center media per step — swap `bg`/`label` for `img: '/assets/...'` to use a photo
 const STEP_MEDIA: {

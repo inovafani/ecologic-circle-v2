@@ -8,7 +8,7 @@ import PageHero from '@/components/PageHero';
 export const metadata: Metadata = {
   title: 'Impact Story — Ecologic Circle',
   description:
-    'Four SDGs. One circular model. Every tonne of straw diverted reduces emissions, lifts income, improves air quality, and builds healthier soil.',
+    'Five SDGs. One circular model. Every tonne of straw diverted reduces emissions, lifts income, improves air quality, and builds healthier soil.',
 };
 
 const wrap = {
@@ -22,13 +22,19 @@ const SDG_CARDS = [
     n: '1',
     bg: '#E5243B',
     title: 'No Poverty',
-    body: 'Contract farming for organic farming already guarantees fair prices with 40% premium. Straw sales complement further. An important counter to loan-shark dependency.',
+    body: 'Contract farming guarantees fair prices with a 40% premium, and straw sales add more — an important counter to loan-shark dependency.',
   },
   {
     n: '3',
     bg: '#4C9F38',
     title: 'Good Health',
     body: 'Eliminating field burning directly reduces the devastating air pollution that blankets Asia every season. Air pollution is estimated to cause 32,300 deaths annually in Thailand.',
+  },
+  {
+    n: '8',
+    bg: '#A21942',
+    title: 'Decent Work & Growth',
+    body: 'Our entire processes entail a significant number of jobs. We strive to provide decent employment conditions across every stage of the circular loop.',
   },
   {
     n: '12',
@@ -40,7 +46,7 @@ const SDG_CARDS = [
     n: '13',
     bg: '#3F7E44',
     title: 'Climate Action',
-    body: '957 kg CO₂ emission is prevented per tonne of straw. Rice systems emit as much as aviation. Significantly more emission savings can be achieved when our organic fertilizer replaces chemical fertilizer and our biochar is used in the soil.',
+    body: '957 kg CO₂ is prevented per tonne of straw — rice systems emit as much as aviation. Even more is saved when our fertilizer and biochar replace chemical inputs.',
   },
 ];
 
@@ -112,7 +118,7 @@ export default function ImpactPage() {
       <EcoNav active="impact" />
       <main style={{ overflowX: 'clip' }}>
         <PageHero
-          title="Four SDGs. One circular model."
+          title="Five SDGs. One circular model."
           titleSize={64}
           sub="Every tonne of straw diverted reduces emissions, lifts income, improves air quality, and builds healthier soil."
         />
@@ -121,12 +127,13 @@ export default function ImpactPage() {
         <section style={{ background: '#F6FCEE', padding: '64px 0 96px' }}>
           <Reveal
             stagger
-            className="eco-4col"
+            className="eco-5col"
             style={{
               ...wrap,
+              maxWidth: 1320,
               display: 'grid',
-              gridTemplateColumns: 'repeat(4,1fr)',
-              gap: 24,
+              gridTemplateColumns: 'repeat(5,1fr)',
+              gap: 22,
               alignItems: 'stretch',
               gridAutoRows: '1fr',
             }}
@@ -140,7 +147,7 @@ export default function ImpactPage() {
                   background: '#fff',
                   border: '1px solid rgba(47,95,72,.1)',
                   borderRadius: 20,
-                  padding: '30px 26px 28px',
+                  padding: '26px 22px 24px',
                   display: 'flex',
                   flexDirection: 'column',
                   height: '100%',
