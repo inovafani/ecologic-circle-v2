@@ -7,7 +7,7 @@ import Reveal from '@/components/Reveal';
 import CountUp from '@/components/CountUp';
 
 export const metadata: Metadata = {
-  title: 'Ecologic Circle — Next level sustainable packaging',
+  title: 'Ecologic Circle',
   description:
     'Turning rice straw that would otherwise burn into compostable packaging, tree-free pulp and organic fertiliser — at scale.',
 };
