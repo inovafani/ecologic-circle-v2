@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'Our Team — Ecologic Circle',
   description:
     'Seasoned leaders, one shared vision. The team behind Ecologic Circle — turning rice straw into compostable packaging, tree-free pulp and organic fertiliser.',
+  icons: {
+    icon: '/assets/title-logo.png',
+  },
 };
 
 export default function RootLayout({
