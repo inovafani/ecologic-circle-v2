@@ -632,7 +632,8 @@
         padding: 3px 10px;
         border-radius: 8px;
         vertical-align: middle;
-        white-space: nowrap;
+        white-space: normal;
+        max-width: 100%;
       }
       .ph::before {
         content: '●';
@@ -806,6 +807,10 @@
         gap: 56px;
         align-items: center;
         width: 100%;
+        min-width: 0;
+      }
+      .hero .wrap > * {
+        min-width: 0;
       }
       .hero-pill {
         display: inline-flex;
@@ -1144,6 +1149,9 @@
         }
         .hero-btns .btn {
           width: 100%;
+        }
+        .nav-cta .btn-pri {
+          display: none;
         }
         .statstrip .wrap {
           grid-template-columns: 1fr 1fr;
