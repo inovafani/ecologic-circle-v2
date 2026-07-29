@@ -82,6 +82,9 @@
   .logoRow {
     padding: 0 28px;
   }
+  .logo {
+    height: 54px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

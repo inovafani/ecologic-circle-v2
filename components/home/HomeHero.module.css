@@ -288,6 +288,9 @@
   .logoRow {
     padding: 24px 28px 0;
   }
+  .logo {
+    height: 54px;
+  }
   .scrim {
     background: linear-gradient(
       180deg,
