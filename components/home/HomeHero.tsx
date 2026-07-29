@@ -101,7 +101,7 @@ export default function HomeHero() {
         <Link href="/" aria-label="Ecologic Circle — home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/assets/logo.png"
+            src="/assets/logo-hd.png"
             alt="Ecologic Circle"
             className={styles.logo}
           />

@@ -44,7 +44,7 @@ export default function PageHero({
       <div className={styles.logoRow}>
         <Link href="/" aria-label="Ecologic Circle — home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/logo.png" alt="Ecologic Circle" className={styles.logo} />
+          <img src="/assets/logo-hd.png" alt="Ecologic Circle" className={styles.logo} />
         </Link>
       </div>
 

@@ -314,7 +314,7 @@ export default function HomePage() {
                       width: 66,
                       height: 66,
                       borderRadius: 18,
-                      background: `${c.color}1f`,
+                      background: c.color,
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -326,8 +326,8 @@ export default function HomePage() {
                       width="38"
                       height="38"
                       fill="none"
-                      stroke={c.color}
-                      strokeWidth="1.7"
+                      stroke="#fff"
+                      strokeWidth="1.9"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     >
